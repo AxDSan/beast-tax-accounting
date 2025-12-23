@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  pointer-events: none;
+}
+
+@supports (scroll-behavior: smooth) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Offset for fixed navbar */
+html {
+  scroll-padding-top: 80px;
+}
+
+.petit-formal-script-regular {
+  font-family: "Petit Formal Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.featured-service {
+  position: relative;
+  border: 2px solid rgba(34, 197, 94, 0.3);
+  border-radius: 1rem;
+}
+
+.featured-service::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.highlight-service {
+  animation: highlightService 3s ease-in-out;
+}
+
+@keyframes highlightService {
+  0% {
+    outline: 4px solid rgba(34, 197, 94, 0.8);
+    outline-offset: 8px;
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.6);
+  }
+  25% {
+    outline: 4px solid rgba(34, 197, 94, 0.8);
+    outline-offset: 12px;
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.8);
+  }
+  50% {
+    outline: 4px solid rgba(34, 197, 94, 0.8);
+    outline-offset: 8px;
+    box-shadow: 0 0 40px rgba(34, 197, 94, 0.7);
+  }
+  75% {
+    outline: 4px solid rgba(34, 197, 94, 0.8);
+    outline-offset: 12px;
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.6);
+  }
+  100% {
+    outline: 4px solid rgba(34, 197, 94, 0.2);
+    outline-offset: 8px;
+    box-shadow: 0 0 0px rgba(34, 197, 94, 0);
+  }
+}
+
