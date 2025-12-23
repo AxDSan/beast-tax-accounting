@@ -493,15 +493,76 @@ const IndexPage: React.FC<PageProps> = () => {
                 </div>
               </div>
             </div>
-            <div className="lg:col-span-8 w-full h-full">
-              <GoHighLevelForm
-                formUrlEn="https://links.beast-tax-accounting.com/widget/form/ruVEmDh6fv0qteXUuiv1"
-                formUrlEs="https://links.beast-tax-accounting.com/widget/form/ruVEmDh6fv0qteXUuiv1"
-                height={1200}
-                mobileHeight={1400}
-                formId="contact-form"
-                className="bg-transparent rounded-none"
-              />
+            <div className="lg:col-span-8 w-full">
+              <div className="bg-dark/20 p-8 rounded-lg backdrop-blur-sm">
+                <form className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-medium text-white mb-2">
+                        Full Name
+                      </label>
+                      <input
+                        type="text"
+                        className="w-full px-4 py-3 bg-dark/50 border border-gold-900/30 rounded-sm focus:border-gold-500 focus:ring-1 focus:ring-gold-500 text-white placeholder-gray-400 transition-colors"
+                        placeholder="Enter your full name"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-white mb-2">
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        className="w-full px-4 py-3 bg-dark/50 border border-gold-900/30 rounded-sm focus:border-gold-500 focus:ring-1 focus:ring-gold-500 text-white placeholder-gray-400 transition-colors"
+                        placeholder="Enter your email"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-white mb-2">
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      className="w-full px-4 py-3 bg-dark/50 border border-gold-900/30 rounded-sm focus:border-gold-500 focus:ring-1 focus:ring-gold-500 text-white placeholder-gray-400 transition-colors"
+                      placeholder="Enter your phone number"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-white mb-2">
+                      Service Interested In
+                    </label>
+                    <select className="w-full px-4 py-3 bg-dark/50 border border-gold-900/30 rounded-sm focus:border-gold-500 focus:ring-1 focus:ring-gold-500 text-white transition-colors">
+                      <option value="" className="bg-dark">Select a service</option>
+                      <option value="accounting" className="bg-dark">Accounting & Bookkeeping</option>
+                      <option value="payroll" className="bg-dark">Payroll Services</option>
+                      <option value="individual" className="bg-dark">Individual Tax Returns</option>
+                      <option value="corporate" className="bg-dark">Corporate Tax Returns</option>
+                      <option value="planning" className="bg-dark">Tax Planning</option>
+                      <option value="other" className="bg-dark">Other Services</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-white mb-2">
+                      Message
+                    </label>
+                    <textarea
+                      rows={4}
+                      className="w-full px-4 py-3 bg-dark/50 border border-gold-900/30 rounded-sm focus:border-gold-500 focus:ring-1 focus:ring-gold-500 text-white placeholder-gray-400 transition-colors resize-none"
+                      placeholder="Tell us about your needs..."
+                      required
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full bg-gold-600 hover:bg-gold-500 text-white font-bold py-4 rounded-sm transition-colors uppercase tracking-wide"
+                  >
+                    Send Message
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
