@@ -11,9 +11,11 @@ export const translations = {
       portal: "Portal Seguro",
       contact: "Contáctanos",
       followUs: "¡Síguenos!",
+      process: "Nuestro Proceso",
+      faq: "Preguntas Frecuentes",
     },
     footer: {
-      tagline: "Professional services for your business needs",
+      tagline: "Servicios profesionales para las necesidades de su negocio",
       contact: "Contacto",
       services: "Servicios",
       copyright: "Todos los derechos reservados.",
@@ -21,67 +23,63 @@ export const translations = {
       termsAndConditions: "Términos y Condiciones",
     },
     services: {
+      title: "Nuestros Servicios",
+      subtitle: "Soluciones fiscales completas para individuos y negocios",
+      specializedTitle: "Servicios Especializados",
+      specializedSubtitle: "Estrategias avanzadas para maximizar sus beneficios",
       categories: {
         taxComplianceNegocios: "Tax Compliance Negocios",
         planillasIndividuo: "Planillas Individuo Hacienda",
         planillaFederal: "Planilla Federal Individuo",
         serviciosNegocios: "Servicios a Negocios",
+        otrosServicios: "Otros Servicios",
+      },
+      mainServices: {
+        accountingBookkeeping: "Contabilidad y Teneduría de Libros",
+        payroll: "Nómina",
+        individualFederal: "Declaración Federal de Impuestos Individuales",
+        sCorp: "Declaraciones de S-Corp",
+        llc: "Declaraciones de LLC",
+        selfEmployed: "Declaración de Autoempleado",
+        rent: "Declaraciones de Alquiler",
+        taxAdvising: "Asesoría Fiscal",
+        otherServices: "Otros Servicios",
+      },
+      planificacion: {
+        title: "Planificación Contributiva",
+        description: "Análisis profundo para minimizar su carga fiscal legalmente.",
+      },
+      estructura: {
+        title: "Estructura de Negocio",
+        description: "Optimización de su entidad legal para máxima protección y ahorro.",
+      },
+      estrategias: {
+        title: "Estrategias Contributivas",
+        description: "Implementación de tácticas avanzadas del top 1% para su negocio.",
+      },
+      taxStrategy: {
+        title: "Análisis de Estrategia Fiscal",
+        description: "Revisamos minuciosamente la situación financiera de cada cliente para identificar oportunidades de ahorro fiscal.",
+      },
+      entityStructuring: {
+        title: "Estructuración de Entidades",
+        description: "Ayudamos a emprendedores e inversionistas a establecer las estructuras comerciales más eficientes fiscalmente.",
+      },
+      taxReturnReview: {
+        title: "Revisión de Declaraciones",
+        description: "Revisión detallada de declaraciones actuales y anteriores para descubrir deducciones perdidas.",
       },
       planillaFederal: {
         title: "Planillas Federales",
         description: "Formulario de Impuestos Personales (Form 1040).",
       },
-      entidadesConducto: {
-        title: "Planillas Entidades Conducto",
-        description: "Planilla Informativa sobre Ingresos de Entidades Conducto (non-profit, trusts, etc.).",
-      },
       corporacionesPlanillas: {
         title: "Corporaciones Planillas",
         description: "Planilla de Contribución sobre Ingresos de Corporaciones (Form 480.20).",
       },
-      patentesMunicipales: {
-        title: "Patentes Municipales",
-        description: "Declaración y pago de patentes municipales (licencias municipales por volumen de negocio).",
-      },
-      deptDelEstado: {
-        title: "Dept. del Estado",
-        description: "Portal del Departamento de Estado de Puerto Rico (registro de corporaciones, informes anuales, certificados de buena existencia).",
-      },
-      crimMueble: {
-        title: "CRIM Mueble",
-        description: "Centro de Recaudación de Ingresos Municipales – Propiedad Mueble (pago de contribución sobre propiedad mueble comercial).",
-      },
-      individuosPlanillas: {
-        title: "Individuos Planillas",
-        description: "Planilla de Contribución sobre Ingresos de Individuos (Form 480.30 – renta personal).",
-      },
-      registroComercio: {
-        title: "Registro de Comerciante",
-        description: "Certificado del Registro Único de Comerciantes (Merchant's Registration Certificate).",
-      },
-      suriRegistro: {
-        title: "SURI Registro",
-        description: "Acceso al registro y gestión de cuenta en SURI (portal principal de Hacienda).",
-      },
-      estadosFinancieroNegocio: {
-        title: "Estados Financieros Negocio",
-        description: "Preparación y análisis de estados financieros de negocio.",
-      },
-      estadosFinancieroProyeccion: {
-        title: "Estados Financieros Proyección",
-        description: "Proyecciones financieras y presupuestos para negocios.",
-      },
-      estadosFinancieroPersonal: {
-        title: "Estados Financieros Personales",
-        description: "Estados financieros personales (para préstamos, planificación, etc.).",
-      },
       incorporacionLLC: {
         title: "Incorporación LLC & Corp",
         description: "Servicios de creación de corporaciones y LLC en Puerto Rico y Estados Unidos.",
-      },
-      contabilidadNegocios: {
-        title: "Contabilidad de Negocios",
-        description: "Servicios de contabilidad completa para empresas (libros, nómina, IVU, etc.).",
       },
       otrosServicios: {
         title: "Otros Servicios",
@@ -129,10 +127,57 @@ export const translations = {
     },
     hero: {
       title: "Beast Tax Accounting",
-      subtitle: "Servicios profesionales para las necesidades de su negocio",
-      cta: "Contáctenos",
-      services: "Nuestros Servicios",
+      subtitle: "Dominando la Eficiencia Fiscal",
+      slogan: "Le enseñamos a dueños de negocios e inversionistas cómo reducir su factura de impuestos.",
+      cta: "Agendar Cita",
+      services: "Conozca Más",
     },
+    about: {
+      title: "Dominando la Eficiencia Fiscal",
+      subtitle: "Estrategas Fiscales Licenciados",
+      description: "Beast Tax Accounting es una firma de estrategia fiscal de primer nivel especializada en ayudar a dueños de negocios e inversionistas inmobiliarios a reducir significativamente sus cargas fiscales.",
+      whyChooseUs: "¿Por Qué Elegirnos?",
+      whyChooseUsText: "Nuestro enfoque único combina un análisis profundo de estrategia fiscal y planificación personalizada para descubrir oportunidades de ahorro.",
+      experienceBadge: "Más de 23 años de experiencia",
+    },
+    video: {
+      title: "Conozca Más Sobre Beast Tax Accounting",
+    },
+    process: {
+      title: "Nuestro Proceso",
+      step1: "Revisión de ADN Fiscal",
+      step1Desc: "El error #1 que vemos es dejar dinero sobre la mesa al no revisar declaraciones anteriores.",
+      step2: "Análisis de Estrategia",
+      step2Desc: "Entender su responsabilidad fiscal antes de la temporada de impuestos es el secreto para reducir su factura.",
+      step3: "Estructuración Avanzada",
+      step3Desc: "Aseguramos que su estructura empresarial esté optimizada para el máximo ahorro fiscal.",
+      step4: "Implementación",
+      step4Desc: "Ejecución enfocada en estrategias fiscales para asegurar los ahorros planificados.",
+    },
+    testimonials: {
+      title: "Lo Que Dicen Nuestros Clientes",
+      subtitle: "Resultados Reales de Clientes Reales",
+    },
+    faq: {
+      title: "Preguntas Frecuentes",
+      q1: "¿Ofrecen entrenamiento para mi CPA actual?",
+      a1: "Sí, este programa no es solo para contribuyentes sino también para CPAs que deseen aprender estrategias avanzadas.",
+      q2: "¿Cuánto cuesta trabajar con su equipo?",
+      a2: "Ofrecemos servicios de planificación e implementación con una tarifa fija basada en las estrategias necesarias.",
+      q3: "¿Hacen mis impuestos?",
+      a3: "Sí, nuestros clientes de asesoría pueden presentar sus declaraciones de impuestos directamente con nosotros.",
+    },
+    whatsappCta: {
+      title: "¿Desea optimizar sus impuestos? ¿O necesita ayuda?",
+      subtitle: "Escríbanos por WhatsApp y le ayudaremos a comenzar.",
+      button: "WhatsApp",
+    },
+    contact: {
+      title: "Contáctanos Hoy",
+      address: "Dirección",
+      phone: "Teléfono / WhatsApp",
+      email: "Email",
+    }
   },
   en: {
     nav: {
@@ -144,6 +189,8 @@ export const translations = {
       portal: "Secure Portal",
       contact: "Contact Us",
       followUs: "Follow Us!",
+      process: "Our Process",
+      faq: "FAQ",
     },
     footer: {
       tagline: "Professional services for your business needs",
@@ -154,67 +201,63 @@ export const translations = {
       termsAndConditions: "Terms & Conditions",
     },
     services: {
+      title: "Our Services",
+      subtitle: "Complete tax solutions for individuals and businesses",
+      specializedTitle: "Specialized Services",
+      specializedSubtitle: "Advanced strategies to maximize your benefits",
       categories: {
         taxComplianceNegocios: "Business Tax Compliance",
         planillasIndividuo: "Individual Tax Returns (PR)",
         planillaFederal: "Federal Individual Tax Returns",
         serviciosNegocios: "Business Services",
+        otrosServicios: "Other Services",
+      },
+      mainServices: {
+        accountingBookkeeping: "Accounting & Bookkeeping",
+        payroll: "Payroll",
+        individualFederal: "Individual Federal Tax Return",
+        sCorp: "S-Corp Returns",
+        llc: "LLC Returns",
+        selfEmployed: "Self-Employed Return",
+        rent: "Rent Returns",
+        taxAdvising: "Tax Advising",
+        otherServices: "Other Services",
+      },
+      planificacion: {
+        title: "Tax Planning",
+        description: "Deep analysis to legally minimize your tax burden.",
+      },
+      estructura: {
+        title: "Business Structure",
+        description: "Optimization of your legal entity for maximum protection and savings.",
+      },
+      estrategias: {
+        title: "Tax Strategies",
+        description: "Implementation of advanced tactics of the top 1% for your business.",
+      },
+      taxStrategy: {
+        title: "Tax Strategy Analysis",
+        description: "We thoroughly review each client's financial situation to identify tax-saving opportunities.",
+      },
+      entityStructuring: {
+        title: "Entity Structuring",
+        description: "We help entrepreneurs and real estate investors set up the most tax-efficient business structures.",
+      },
+      taxReturnReview: {
+        title: "Tax Return Review",
+        description: "Detailed review of current and previous tax returns to uncover missed deductions.",
       },
       planillaFederal: {
         title: "Federal Tax Returns",
         description: "Personal Tax Form (Form 1040).",
       },
-      entidadesConducto: {
-        title: "Pass-Through Entities Returns",
-        description: "Information return on income of pass-through entities (non-profit, trusts, etc.).",
-      },
       corporacionesPlanillas: {
         title: "Corporate Tax Returns",
         description: "Corporate income tax return (Form 480.20).",
       },
-      patentesMunicipales: {
-        title: "Municipal Licenses",
-        description: "Declaration and payment of municipal licenses (municipal licenses by business volume).",
-      },
-      deptDelEstado: {
-        title: "Department of State",
-        description: "Puerto Rico Department of State portal (corporation registration, annual reports, certificates of good standing).",
-      },
-      crimMueble: {
-        title: "CRIM Personal Property",
-        description: "Municipal Income Collection Center – Personal Property (payment of tax on commercial personal property).",
-      },
-      individuosPlanillas: {
-        title: "Individual Tax Returns",
-        description: "Individual income tax return (Form 480.30 – personal income).",
-      },
-      registroComercio: {
-        title: "Merchant Registration",
-        description: "Unique Merchant Registration Certificate (Merchant's Registration Certificate).",
-      },
-      suriRegistro: {
-        title: "SURI Registration",
-        description: "Unified Internal Revenue System – account access and management in SURI (main Treasury portal).",
-      },
-      estadosFinancieroNegocio: {
-        title: "Business Financial Statements",
-        description: "Preparation and analysis of business financial statements.",
-      },
-      estadosFinancieroProyeccion: {
-        title: "Financial Projections",
-        description: "Financial projections and budgets for businesses.",
-      },
-      estadosFinancieroPersonal: {
-        title: "Personal Financial Statements",
-        description: "Personal financial statements (for loans, planning, etc.).",
-      },
       incorporacionLLC: {
         title: "LLC & Corporation Incorporation",
         description: "Corporation and LLC formation services in Puerto Rico and United States.",
-      },
-      contabilidadNegocios: {
-        title: "Business Accounting",
-        description: "Complete accounting services for businesses (books, payroll, IVU, etc.).",
       },
       otrosServicios: {
         title: "Other Services",
@@ -262,12 +305,58 @@ export const translations = {
     },
     hero: {
       title: "Beast Tax Accounting",
-      subtitle: "Professional services for your business needs",
-      cta: "Contact Us",
-      services: "Our Services",
+      subtitle: "Mastering Tax Efficiency",
+      slogan: "We teach business owners and real estate investors how to reduce their tax bill.",
+      cta: "Schedule Now",
+      services: "Learn More",
     },
+    about: {
+      title: "Mastering Tax Efficiency",
+      subtitle: "Licensed Tax Strategists",
+      description: "Beast Tax Accounting is a premier tax strategy firm specializing in helping business owners and real estate investors significantly reduce their tax burdens.",
+      whyChooseUs: "Why Choose Beast Tax Accounting?",
+      whyChooseUsText: "Our unique approach combines in-depth tax strategy analysis and personalized planning to uncover opportunities for savings.",
+      experienceBadge: "More than 23 years of experience",
+    },
+    video: {
+      title: "Know More About Beast Tax Accounting",
+    },
+    process: {
+      title: "Our Process",
+      step1: "Tax DNA Review",
+      step1Desc: "The #1 mistake we see with clients is leaving money on the table from not reviewing previous tax returns.",
+      step2: "Strategy Analysis",
+      step2Desc: "Understanding your tax liability ahead of tax filing season is the secret to reducing your tax bill.",
+      step3: "Advanced Structuring",
+      step3Desc: "We ensure your business structure is optimized for maximum tax savings.",
+      step4: "Implementation",
+      step4Desc: "Focused execution on tax strategies to secure the mapped out tax savings.",
+    },
+    testimonials: {
+      title: "What Our Clients Say",
+      subtitle: "Real Case Studies from Real Clients",
+    },
+    faq: {
+      title: "Most Popular Questions",
+      q1: "Do you offer training for my current CPA?",
+      a1: "Yes, this program is not only for taxpayers but for CPAs who would like to learn advanced tax strategies.",
+      q2: "How much does it cost to work with your team?",
+      a2: "We offer planning and implementation services as a flat rate fee based on the tax strategies needed.",
+      q3: "Can you do my taxes?",
+      a3: "Yes, our advisory clients can file tax returns directly with us.",
+    },
+    whatsappCta: {
+      title: "Do you want to optimize your taxes? Or need any help...",
+      subtitle: "Message us on WhatsApp and we'll help you get started.",
+      button: "WhatsApp",
+    },
+    contact: {
+      title: "Contact Us Today",
+      address: "Address",
+      phone: "Phone / WhatsApp",
+      email: "Email",
+    }
   },
 }
 
 export type TranslationKeys = typeof translations.es
-

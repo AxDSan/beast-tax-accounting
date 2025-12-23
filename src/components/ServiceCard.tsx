@@ -10,24 +10,21 @@ interface ServiceCardProps {
 const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description }) => {
   return (
     <motion.div
-      whileHover={{ y: -8, scale: 1.02 }}
+      whileHover={{ y: -8 }}
       transition={{ duration: 0.3 }}
-      className="group bg-gray-900/50 border border-gray-800 rounded-2xl p-8 hover:border-primary-500/50 transition-colors"
+      className="group bg-dark border border-gray-800 rounded-sm p-8 hover:border-gold-500 transition-all duration-300 shadow-lg hover:shadow-gold-500/10"
     >
-      <motion.div
-        whileHover={{ rotate: [0, -10, 10, 0] }}
-        transition={{ duration: 0.5 }}
-        className="w-14 h-14 bg-primary-600/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-600/30 transition-colors"
-      >
-        <div style={{ color: "#006827" }}>{icon}</div>
-      </motion.div>
-      <h3 className="text-xl font-heading font-semibold text-white mb-3">
+      <div className="w-16 h-16 bg-gold-900/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold-500/20 transition-colors">
+        <div className="text-gold-500">{icon}</div>
+      </div>
+      <h3 className="text-xl font-heading font-semibold text-white mb-3 group-hover:text-gold-400 transition-colors">
         {title}
       </h3>
-      <p className="text-gray-400 leading-relaxed">{description}</p>
+      <p className="text-gray-400 leading-relaxed text-sm font-light">
+        {description}
+      </p>
     </motion.div>
   )
 }
 
 export default ServiceCard
-
