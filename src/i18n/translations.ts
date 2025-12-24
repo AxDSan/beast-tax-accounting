@@ -177,7 +177,23 @@ export const translations = {
       address: "Dirección",
       phone: "Teléfono / WhatsApp",
       email: "Email",
-    }
+    },
+    admin: {
+      toggleLabel: "Abrir Panel de Administración",
+      title: "Panel de Control",
+      companyBrand: "Empresa y Marca",
+      legalName: "Nombre Legal de la Empresa",
+      brandName1: "Nombre de Marca 1 (ej. Beast)",
+      brandName2: "Nombre de Marca 2 (ej. Tax)",
+      ceoInfo: "Información del CEO / Persona",
+      name: "Nombre",
+      role: "Cargo",
+      imageUrl: "Imagen del CEO",
+      uploadImage: "Haz clic para subir imagen",
+      saveChanges: "Guardar Cambios",
+      saving: "Guardando...",
+      reset: "Restablecer",
+    },
   },
   en: {
     nav: {
@@ -355,7 +371,23 @@ export const translations = {
       address: "Address",
       phone: "Phone / WhatsApp",
       email: "Email",
-    }
+    },
+    admin: {
+      toggleLabel: "Open Admin Dashboard",
+      title: "Admin Dashboard",
+      companyBrand: "Company & Brand",
+      legalName: "Legal Company Name",
+      brandName1: "Brand Name 1 (e.g. Beast)",
+      brandName2: "Brand Name 2 (e.g. Tax)",
+      ceoInfo: "CEO / Person Info",
+      name: "Name",
+      role: "Role",
+      imageUrl: "CEO Image",
+      uploadImage: "Click to upload image",
+      saveChanges: "Save Changes",
+      saving: "Saving...",
+      reset: "Reset",
+    },
   },
 }
 
