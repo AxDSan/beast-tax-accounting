@@ -11,9 +11,9 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-dark text-white border-t border-red-900/20">
       <div className="max-w-7xl mx-auto px-6 lg:px-20 py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
           {/* Logo and Tagline */}
-          <div>
+          <div className="lg:col-span-4">
             <div className="mb-8">
               <Link to="/" className="flex items-center gap-3 group">
                 {config.logo && (
@@ -27,12 +27,12 @@ const Footer: React.FC = () => {
                     }}
                   />
                 )}
-                <span className="text-3xl font-bold font-heading text-white group-hover:text-red-400 transition-colors">
+                <span className="text-2xl xl:text-3xl font-bold font-heading text-white group-hover:text-red-400 transition-colors whitespace-normal">
                   {config.brandNameFirst}<span className="text-red-500">{config.brandNameSecond}</span>
                 </span>
               </Link>
             </div>
-            <p className="text-gray-400 mb-8 text-sm leading-relaxed font-sans">
+            <p className="text-gray-400 mb-8 text-sm leading-relaxed font-sans max-w-sm">
               {t.footer.tagline}
             </p>
             <ul className="flex flex-wrap gap-4">
@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Contact */}
-          <div>
+          <div className="lg:col-span-3">
             <h4 className="text-white font-sans font-semibold mb-8 text-sm uppercase tracking-wider">{t.footer.contact}</h4>
             <ul className="space-y-4 text-gray-400 text-sm font-sans">
               <li className="whitespace-pre-line">{config.address}</li>
@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Services Column 1 */}
-          <div>
+          <div className="lg:col-span-2">
             <h5 className="text-white font-sans font-semibold mb-8 text-sm uppercase tracking-wider">
               {t.services.title}
             </h5>
@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Specialized Services */}
-          <div>
+          <div className="lg:col-span-3">
             <h5 className="text-white font-sans font-semibold mb-8 text-sm uppercase tracking-wider">
               {t.services.specializedTitle}
             </h5>
