@@ -24,27 +24,14 @@ const Hero: React.FC<HeroProps> = ({
         muted
         loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover opacity-20"
+        className="absolute inset-0 w-full h-full object-cover opacity-40"
       >
         <source src="https://videos.pexels.com/video-files/3191422/3191422-uhd_2732_1440_25fps.mp4" type="video/mp4" />
       </video>
 
-      <div className="absolute inset-0 bg-gradient-to-b from-dark/90 via-dark/80 to-dark" />
+      <div className="absolute inset-0 bg-gradient-to-b from-dark/60 via-dark/40 to-dark/70" />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-wrap justify-center gap-3 md:gap-6 mb-12"
-        >
-          {['Licensed Tax Professionals', '23+ Years Experience', 'IRS Approved'].map((badge, i) => (
-            <div key={i} className="px-4 py-1.5 rounded-full border border-gray-800 bg-black/40 backdrop-blur-sm text-sm text-gray-300 font-medium tracking-wide uppercase">
-              {badge}
-            </div>
-          ))}
-        </motion.div>
-
         {logoSrc ? (
           <motion.img
             src={logoSrc}

@@ -16,13 +16,6 @@ import {
 const IndexPage: React.FC<PageProps> = () => {
   const { t } = useI18n()
 
-  // Certifications data
-  const certifications = [
-    { name: "Enrolled Agent", image: "/certifications/ea-logo.png" },
-    { name: "Departamento de Hacienda", image: "/certifications/hacienda-logo.png" },
-    { name: "NAEA", image: "/certifications/naea-logo.png" },
-    { name: "Main Street Tax Advisor", image: "/certifications/mainstreet-logo.png" },
-  ]
 
   // Team members
   const teamMembers = [
@@ -264,23 +257,6 @@ const IndexPage: React.FC<PageProps> = () => {
         </div>
       </SectionWrapper>
 
-      {/* Certifications Marquee */}
-      <SectionWrapper className="py-12 bg-gray-900 border-y border-red-900/20 overflow-hidden">
-        <ScrollFadeIn direction="up">
-          <div className="w-full">
-            <div className="flex items-center gap-32 animate-marquee px-4">
-              {[...certifications, ...certifications, ...certifications, ...certifications].map((cert, index) => (
-                <div
-                  key={`${cert.name}-${index}`}
-                  className="w-64 h-32 flex-shrink-0 flex items-center justify-center filter grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
-                >
-                  <span className="text-white font-bold text-xl border border-red-500/20 p-4 rounded-sm">{cert.name}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </ScrollFadeIn>
-      </SectionWrapper>
 
       {/* Video Section */}
       <SectionWrapper className="py-24 bg-red-600"> 
@@ -305,7 +281,7 @@ const IndexPage: React.FC<PageProps> = () => {
       </SectionWrapper>
 
       {/* Team Members Section */}
-      <SectionWrapper bgImage="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop" bgOverlay={true} id="team" className="py-24 bg-dark">
+      <SectionWrapper bgImage="https://images.pexels.com/photos/416320/pexels-photo-416320.jpeg" bgOverlay={true} id="team" className="py-24 bg-dark">
         <div className="max-w-7xl mx-auto px-6 lg:px-20">
           <ScrollFadeIn direction="down">
             <h2 className="text-3xl md:text-4xl underline font-heading font-normal text-center text-white mb-12">
