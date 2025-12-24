@@ -13,6 +13,9 @@ interface BrandConfig {
   whatsapp: string;
   address: string;
   youtube: string;
+  seoTitle?: string;
+  seoDescription?: string;
+  seoKeywords?: string;
 }
 
 interface ConfigContextType {
@@ -34,6 +37,9 @@ export const DEFAULT_CONFIG: BrandConfig = {
   whatsapp: '939-228-1422',
   address: 'Carr 115 Km 16 Bo Rio Grande, Rincón, PR 00677',
   youtube: 'https://www.youtube.com/embed/p-kasvTzniE',
+  seoTitle: 'Summit Tax Advisors | Licensed Tax Strategists',
+  seoDescription: 'Professional tax strategy services for business owners and real estate investors. We help you reduce your tax bill significantly.',
+  seoKeywords: 'tax accounting, tax planning, business tax services, tax consulting, puerto rico taxes, federal taxes',
 };
 
 const ConfigContext = createContext<ConfigContextType | undefined>(undefined);

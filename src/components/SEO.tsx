@@ -65,12 +65,14 @@ const SEO: React.FC<SEOProps> = ({
   // Dynamic site metadata using config
   const dynamicSiteMetadata = {
     ...siteMetadata,
-    title: `${config.brandNameFirst} ${config.brandNameSecond}`,
+    title: config.seoTitle || `${config.brandNameFirst} ${config.brandNameSecond}`,
     titleTemplate: `%s | ${config.brandNameFirst} ${config.brandNameSecond}`,
+    description: config.seoDescription || siteMetadata.description,
     author: config.companyName,
     phone: config.phone,
     email: config.email,
     whatsapp: config.whatsapp,
+    keywords: config.seoKeywords ? config.seoKeywords.split(',').map(k => k.trim()) : siteMetadata.keywords,
   }
 
   const seo = {

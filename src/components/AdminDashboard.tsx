@@ -383,6 +383,41 @@ export const AdminDashboard: React.FC = () => {
                           />
                         </div>
                       </div>
+
+                      <h3 className="text-sm font-bold uppercase tracking-widest text-red-600 mt-8">{t.admin?.seoSettings || "SEO Settings"}</h3>
+                      <div className="space-y-4">
+                        <div>
+                          <label className="block text-xs font-semibold text-gray-500 mb-1">{t.admin?.seoTitle || "SEO Title"}</label>
+                          <input
+                            name="seoTitle"
+                            value={formData.seoTitle || ''}
+                            onChange={handleChange}
+                            placeholder="Meta Title"
+                            className="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl px-4 py-3 text-sm outline-none focus:border-red-600 transition-colors"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-xs font-semibold text-gray-500 mb-1">{t.admin?.seoDescription || "SEO Description"}</label>
+                          <textarea
+                            name="seoDescription"
+                            value={formData.seoDescription || ''}
+                            onChange={handleChange}
+                            rows={3}
+                            placeholder="Meta Description"
+                            className="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl px-4 py-3 text-sm outline-none focus:border-red-600 transition-colors resize-none"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-xs font-semibold text-gray-500 mb-1">{t.admin?.seoKeywords || "SEO Keywords"}</label>
+                          <input
+                            name="seoKeywords"
+                            value={formData.seoKeywords || ''}
+                            onChange={handleChange}
+                            placeholder="keyword1, keyword2, ..."
+                            className="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl px-4 py-3 text-sm outline-none focus:border-red-600 transition-colors"
+                          />
+                        </div>
+                      </div>
                     </div>
 
                     <div className="flex gap-4 pt-4">

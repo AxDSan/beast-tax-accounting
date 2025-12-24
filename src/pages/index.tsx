@@ -600,8 +600,6 @@ export default IndexPage
 
 export const Head: HeadFC = () => (
   <SEO 
-    title="Home"
-    description="Licensed Tax Strategists helping business owners reduce their tax bill."
     pathname="/"
   />
 )
