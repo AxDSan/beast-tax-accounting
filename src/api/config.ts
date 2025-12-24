@@ -5,14 +5,14 @@ import * as dotenv from "dotenv"
 dotenv.config()
 
 const DEFAULT_CONFIG = {
-  companyName: 'Summit Tax Accounting LLC',
+  companyName: 'Summit Tax Advisors Inc.',
   brandNameFirst: 'Summit',
-  brandNameSecond: 'Tax Accounting',
+  brandNameSecond: 'Tax',
   ceoName: 'Edwin Venezuela',
   ceoRole: 'CEO & Founder',
   ceoImage: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800',
   phone: '787-823-7777',
-  email: 'info@beasttaxaccounting.com',
+  email: 'info@summittaxadvisors.com',
   whatsapp: '939-228-1422',
   address: 'Carr 115 Km 16 Bo Rio Grande, Rincón, PR 00677',
 };
@@ -22,7 +22,7 @@ let supabaseClient: any = null;
 
 const getSupabase = () => {
   if (supabaseClient) return supabaseClient;
-
+  
   const supabaseUrl = process.env.SUPABASE_URL || process.env.GATSBY_SUPABASE_URL || '';
   const supabaseKey = process.env.SUPABASE_ANON_KEY || process.env.GATSBY_SUPABASE_ANON_KEY || '';
 
@@ -38,7 +38,7 @@ export default async function handler(
   res: GatsbyFunctionResponse
 ) {
   const supabase = getSupabase();
-
+  
   try {
     // If Supabase is not configured, use default config
     if (!supabase) {
@@ -46,9 +46,9 @@ export default async function handler(
       if (req.method === "GET") {
         return res.json(DEFAULT_CONFIG);
       } else if (req.method === "POST") {
-        return res.status(503).json({
-          error: "Database not configured",
-          details: "Missing SUPABASE_URL or SUPABASE_ANON_KEY"
+        return res.status(503).json({ 
+          error: "Database not configured", 
+          details: "Missing SUPABASE_URL or SUPABASE_ANON_KEY" 
         });
       }
     }
@@ -73,13 +73,13 @@ export default async function handler(
       }
     } else if (req.method === "POST") {
       const newData = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
-
+      
       // Upsert config in Supabase
       // @ts-ignore - Supabase types are complex
       const { error } = await supabase
         .from('brand_config')
-        .upsert({
-          id: 1,
+        .upsert({ 
+          id: 1, 
           config_data: newData,
           updated_at: new Date().toISOString()
         })

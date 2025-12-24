@@ -21,15 +21,15 @@ interface ConfigContextType {
 }
 
 export const DEFAULT_CONFIG: BrandConfig = {
-  companyName: 'Summit Tax Accounting LLC',
+  companyName: 'Summit Tax Advisors Inc.',
   brandNameFirst: 'Summit',
-  brandNameSecond: 'Tax Accounting',
-  logo: '/logo.svg',
+  brandNameSecond: 'Tax',
+  logo: '',
   ceoName: 'Edwin Venezuela',
   ceoRole: 'CEO & Founder',
-  ceoImage: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800',
+  ceoImage: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80',
   phone: '787-823-7777',
-  email: 'info@beasttaxaccounting.com',
+  email: 'info@summittaxadvisors.com',
   whatsapp: '939-228-1422',
   address: 'Carr 115 Km 16 Bo Rio Grande, Rincón, PR 00677',
 };
@@ -62,7 +62,7 @@ export const ConfigProvider: React.FC<{ children: React.ReactNode }> = ({ childr
 
   const updateConfig = async (newConfig: Partial<BrandConfig>) => {
     const updated = { ...config, ...newConfig };
-
+    
     // Optimistic update
     setConfig(updated);
     localStorage.setItem('summit-brand-config', JSON.stringify(updated));
@@ -74,7 +74,7 @@ export const ConfigProvider: React.FC<{ children: React.ReactNode }> = ({ childr
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updated),
       });
-
+      
       if (!response.ok) {
         const text = await response.text();
         throw new Error(text || `Server responded with ${response.status}`);
@@ -88,7 +88,7 @@ export const ConfigProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   const resetConfig = async () => {
     setConfig(DEFAULT_CONFIG);
     localStorage.removeItem('summit-brand-config');
-
+    
     try {
       await fetch('/api/config', {
         method: 'POST',
