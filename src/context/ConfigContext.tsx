@@ -21,10 +21,10 @@ interface ConfigContextType {
 }
 
 export const DEFAULT_CONFIG: BrandConfig = {
-  companyName: 'Beast Tax Accounting LLC',
-  brandNameFirst: 'Beast',
-  brandNameSecond: 'Tax',
-  logo: '',
+  companyName: 'Summit Tax Accounting LLC',
+  brandNameFirst: 'Summit',
+  brandNameSecond: 'Tax Accounting',
+  logo: '/logo.svg',
   ceoName: 'Edwin Venezuela',
   ceoRole: 'CEO & Founder',
   ceoImage: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800',

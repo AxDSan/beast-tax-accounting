@@ -1,9 +1,11 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import { useI18n } from "../i18n"
+import { useConfig } from "../context/ConfigContext"
 
 const Footer: React.FC = () => {
   const { t } = useI18n()
+  const { config } = useConfig()
   const year = new Date().getFullYear()
 
   return (
@@ -13,9 +15,20 @@ const Footer: React.FC = () => {
           {/* Logo and Tagline */}
           <div>
             <div className="mb-8">
-              <Link to="/" className="group">
+              <Link to="/" className="flex items-center gap-3 group">
+                {config.logo && (
+                  <img
+                    src={config.logo}
+                    alt={`${config.brandNameFirst} ${config.brandNameSecond} Logo`}
+                    className="h-10 w-10 object-contain"
+                    onError={(e) => {
+                      // Hide logo if it fails to load
+                      (e.target as HTMLImageElement).style.display = 'none';
+                    }}
+                  />
+                )}
                 <span className="text-3xl font-bold font-heading text-white group-hover:text-red-400 transition-colors">
-                  BEAST<span className="text-red-500">TAX</span>
+                  {config.brandNameFirst}<span className="text-red-500">{config.brandNameSecond}</span>
                 </span>
               </Link>
             </div>
@@ -87,7 +100,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-red-900/20 pt-12">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-gray-500 text-sm font-sans">
-              © {year} Beast Tax Accounting. {t.footer.copyright}
+              © {year} {config.companyName}. {t.footer.copyright}
             </p>
             <div className="flex gap-8 text-sm font-sans">
               <Link to="/privacy-policy" className="text-gray-500 hover:text-red-400 transition-colors">

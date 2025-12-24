@@ -2,11 +2,13 @@ import * as React from "react"
 import { Link, navigate } from "gatsby"
 import { motion, AnimatePresence } from "framer-motion"
 import { useI18n } from "../i18n"
+import { useConfig } from "../context/ConfigContext"
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = React.useState(false)
   const [scrolled, setScrolled] = React.useState(false)
   const { language, setLanguage, t } = useI18n()
+  const { config } = useConfig()
 
   const navLinks = [
     { name: t.nav.home, href: "/" },
@@ -43,9 +45,20 @@ const Navbar: React.FC = () => {
         <div className="flex items-center h-20">
           {/* Logo - Far Left */}
           <div className="flex justify-start flex-shrink-0">
-            <Link to="/" className="flex-shrink-0 group">
+            <Link to="/" className="flex items-center gap-3 flex-shrink-0 group">
+              {config.logo && (
+                <img
+                  src={config.logo}
+                  alt={`${config.brandNameFirst} ${config.brandNameSecond} Logo`}
+                  className="h-8 w-8 object-contain"
+                  onError={(e) => {
+                    // Hide logo if it fails to load
+                    (e.target as HTMLImageElement).style.display = 'none';
+                  }}
+                />
+              )}
               <span className="text-2xl font-bold font-heading text-white group-hover:text-red-400 transition-colors">
-                BEAST<span className="text-red-500">TAX</span>
+                {config.brandNameFirst}<span className="text-red-500">{config.brandNameSecond}</span>
               </span>
             </Link>
           </div>
