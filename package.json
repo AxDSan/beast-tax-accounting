@@ -16,6 +16,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@formspree/react": "^3.0.0",
     "autoprefixer": "^10.4.22",
     "framer-motion": "^12.23.25",
     "gatsby": "^5.14.6",
@@ -38,4 +39,3 @@
     "typescript": "^5.3.3"
   }
 }
-

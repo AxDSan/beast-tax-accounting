@@ -208,14 +208,14 @@ const IndexPage: React.FC<PageProps> = () => {
 
       {/* About Section */}
       <SectionWrapper id="about" className="py-24 lg:py-32 bg-dark text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-gold-900/10 -skew-x-12 transform translate-x-1/2 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gold-500/5 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2 pointer-events-none" />
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-red-900/10 -skew-x-12 transform translate-x-1/2 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-red-500/5 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2 pointer-events-none" />
 
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             <div className="lg:col-span-5 relative group">
               <ScrollScaleIn>
-                <div className="relative z-10 rounded-sm overflow-hidden shadow-2xl border border-gold-900/50">
+                <div className="relative z-10 rounded-sm overflow-hidden shadow-2xl border border-red-900/50">
                    <div className="aspect-[3/4] relative">
                      <img
                         src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
@@ -226,7 +226,7 @@ const IndexPage: React.FC<PageProps> = () => {
                       <div className="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
                    </div>
                 </div>
-                <div className="absolute top-4 -left-4 w-full h-full border border-gold-500/30 rounded-sm -z-10 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2" />
+                <div className="absolute top-4 -left-4 w-full h-full border border-red-500/30 rounded-sm -z-10 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2" />
               </ScrollScaleIn>
             </div>
 
@@ -234,8 +234,8 @@ const IndexPage: React.FC<PageProps> = () => {
               <ScrollStaggerContainer staggerDelay={0.1}>
                 <ScrollSlideIn side="right">
                   <div className="flex items-center gap-4 mb-8">
-                    <span className="h-px w-16 bg-gold-500"></span>
-                    <span className="text-gold-500 font-sans font-medium tracking-[0.2em] uppercase text-sm">
+                    <span className="h-px w-16 bg-red-500"></span>
+                    <span className="text-red-500 font-sans font-medium tracking-[0.2em] uppercase text-sm">
                       {t.about.experienceBadge}
                     </span>
                   </div>
@@ -244,13 +244,13 @@ const IndexPage: React.FC<PageProps> = () => {
                   <h2 className="text-4xl md:text-5xl font-heading font-normal text-white mb-4 leading-none">
                     {t.about.title}
                   </h2>
-                  <p className="text-xl text-gold-400 font-heading italic mb-8">
+                  <p className="text-xl text-red-400 font-heading italic mb-8">
                     {t.about.subtitle}
                   </p>
                 </ScrollSlideIn>
                 <ScrollSlideIn side="right">
                   <div className="space-y-6">
-                    <p className="text-lg text-gray-300 font-light leading-relaxed border-l-2 border-gold-900 pl-6">
+                    <p className="text-lg text-gray-300 font-light leading-relaxed border-l-2 border-red-900 pl-6">
                       {t.about.description}
                     </p>
                     <p className="text-base text-gray-400 leading-relaxed font-sans">
@@ -265,7 +265,7 @@ const IndexPage: React.FC<PageProps> = () => {
       </SectionWrapper>
 
       {/* Certifications Marquee */}
-      <SectionWrapper className="py-12 bg-gray-900 border-y border-gold-900/20 overflow-hidden">
+      <SectionWrapper className="py-12 bg-gray-900 border-y border-red-900/20 overflow-hidden">
         <ScrollFadeIn direction="up">
           <div className="w-full">
             <div className="flex items-center gap-32 animate-marquee px-4">
@@ -274,7 +274,7 @@ const IndexPage: React.FC<PageProps> = () => {
                   key={`${cert.name}-${index}`}
                   className="w-64 h-32 flex-shrink-0 flex items-center justify-center filter grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
                 >
-                  <span className="text-white font-bold text-xl border border-gold-500/20 p-4 rounded-sm">{cert.name}</span>
+                  <span className="text-white font-bold text-xl border border-red-500/20 p-4 rounded-sm">{cert.name}</span>
                 </div>
               ))}
             </div>
@@ -283,7 +283,7 @@ const IndexPage: React.FC<PageProps> = () => {
       </SectionWrapper>
 
       {/* Video Section */}
-      <SectionWrapper className="py-24 bg-gold-600"> 
+      <SectionWrapper className="py-24 bg-red-600"> 
         <div className="max-w-7xl mx-auto px-6 lg:px-20">
           <ScrollFadeIn direction="down">
             <h2 className="text-3xl md:text-4xl underline font-heading font-normal text-center text-white mb-12">
@@ -291,7 +291,7 @@ const IndexPage: React.FC<PageProps> = () => {
             </h2>
           </ScrollFadeIn>
           <ScrollScaleIn scale={0.9}>
-            <div className="aspect-video overflow-hidden border-2 border-gold-900/20 shadow-2xl">
+            <div className="aspect-video overflow-hidden border-2 border-red-900/20 shadow-2xl">
               <iframe
                 className="w-full h-full"
                 src="https://www.youtube.com/embed/p-kasvTzniE"
@@ -316,7 +316,7 @@ const IndexPage: React.FC<PageProps> = () => {
             {teamMembers.map((member) => (
               <div key={member.name} className="text-center">
                 <ScrollRotateIn angle={-5}>
-                  <div className="relative w-64 h-64 mx-auto mb-6 overflow-hidden bg-gray-900 border-2 border-gold-500/20">
+                  <div className="relative w-64 h-64 mx-auto mb-6 overflow-hidden bg-gray-900 border-2 border-red-500/20">
                     <img
                       src={member.image}
                       alt={member.name}
@@ -328,7 +328,7 @@ const IndexPage: React.FC<PageProps> = () => {
                   <h3 className="text-2xl font-heading font-normal text-white mb-2">
                     {member.name}
                   </h3>
-                  <p className="text-gold-400 font-sans font-semibold uppercase tracking-widest text-sm">
+                  <p className="text-red-400 font-sans font-semibold uppercase tracking-widest text-sm">
                     {member.title}
                   </p>
                 </ScrollFadeIn>
@@ -339,7 +339,7 @@ const IndexPage: React.FC<PageProps> = () => {
       </SectionWrapper>
 
       {/* Services Section */}
-      <SectionWrapper id="services" className="py-24 bg-dark border-t border-gold-900/30">
+      <SectionWrapper id="services" className="py-24 bg-dark border-t border-red-900/30">
         <div className="max-w-7xl mx-auto px-6 lg:px-20">
           <ScrollFadeIn direction="down">
             <h2 className="text-3xl md:text-5xl underline font-heading font-normal text-center text-white mb-4">
@@ -364,7 +364,7 @@ const IndexPage: React.FC<PageProps> = () => {
                 />
                 <div className="absolute inset-0 bg-dark/80 group-hover:bg-dark/90 transition-colors duration-300" />
                 <div className="relative min-h-full flex flex-col justify-between p-6">
-                  <div className="w-12 h-12 bg-gold-600 flex items-center justify-center mb-5 flex-shrink-0 rounded-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                  <div className="w-12 h-12 bg-red-600 flex items-center justify-center mb-5 flex-shrink-0 rounded-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                     <div className="text-white">{service.icon}</div>
                   </div>
                   <h3 className="text-xl font-heading font-normal text-white leading-tight transition-transform duration-300 group-hover:translate-y-[-2px]">
@@ -400,7 +400,7 @@ const IndexPage: React.FC<PageProps> = () => {
                 />
                 <div className="absolute inset-0 bg-dark/80 group-hover:bg-dark/90 transition-colors duration-300" />
                 <div className="relative min-h-full flex flex-col justify-between p-6">
-                  <div className="w-12 h-12 bg-gold-600 flex items-center justify-center mb-5 flex-shrink-0 rounded-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+                  <div className="w-12 h-12 bg-red-600 flex items-center justify-center mb-5 flex-shrink-0 rounded-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
                     <div className="text-white">{service.icon}</div>
                   </div>
                   <div className="flex-grow flex flex-col justify-end">
@@ -419,12 +419,12 @@ const IndexPage: React.FC<PageProps> = () => {
       </SectionWrapper>
 
       {/* WhatsApp CTA Section */}
-      <SectionWrapper id="whatsapp" className="py-20 bg-dark border-t border-gold-900/30">
+      <SectionWrapper id="whatsapp" className="py-20 bg-dark border-t border-red-900/30">
         <div className="max-w-7xl mx-auto px-6 lg:px-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7 text-white">
               <ScrollFadeIn direction="down">
-                <h2 className="text-3xl md:text-4xl font-heading font-normal mb-3 text-gold-500">
+                <h2 className="text-3xl md:text-4xl font-heading font-normal mb-3 text-red-500">
                   {t.whatsappCta.title}
                 </h2>
               </ScrollFadeIn>
@@ -438,7 +438,7 @@ const IndexPage: React.FC<PageProps> = () => {
               <ScrollScaleIn>
                 <a
                   href="#contact"
-                  className="inline-flex items-center justify-center gap-3 w-full lg:w-auto px-8 py-4 font-sans font-semibold text-sm uppercase tracking-wide transition-colors border bg-gold-600 text-white hover:bg-gold-500 border-gold-700"
+                  className="inline-flex items-center justify-center gap-3 w-full lg:w-auto px-8 py-4 font-sans font-semibold text-sm uppercase tracking-wide transition-colors border bg-red-600 text-white hover:bg-red-500 border-red-700"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M17.47,12.5l-.94-.48a.87.87,0,0,0-.9.11l-.42.39a.87.87,0,0,1-.9.13,6.93,6.93,0,0,1-2.05-1.63A6.93,6.93,0,0,1,10.63,9a.87.87,0,0,1,.13-.9l.39-.42a.87.87,0,0,0,.11-.9l-.48-.94a.87.87,0,0,0-1.1-.4,2.61,2.61,0,0,0-1.53,1.85,6,6,0,0,0,1.11,4.06,10.39,10.39,0,0,0,3.46,3.2,6,6,0,0,0,4.06,1.11,2.61,2.61,0,0,0,1.85-1.53A.87.87,0,0,0,17.47,12.5ZM12,2A10,10,0,0,0,3.51,17.68L2.11,22l4.32-1.4A10,10,0,1,0,12,2Z" />
@@ -454,7 +454,7 @@ const IndexPage: React.FC<PageProps> = () => {
       </SectionWrapper>
 
       {/* Contact Section */}
-      <SectionWrapper id="contact" className="py-24 bg-gold-600">
+      <SectionWrapper id="contact" className="py-24 bg-red-600">
         <div className="max-w-7xl mx-auto px-6 lg:px-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-4 text-white">
@@ -503,7 +503,7 @@ const IndexPage: React.FC<PageProps> = () => {
                       </label>
                       <input
                         type="text"
-                        className="w-full px-4 py-3 bg-dark/50 border border-gold-900/30 rounded-sm focus:border-gold-500 focus:ring-1 focus:ring-gold-500 text-white placeholder-gray-400 transition-colors"
+                        className="w-full px-4 py-3 bg-dark/50 border border-red-900/30 rounded-sm focus:border-red-500 focus:ring-1 focus:ring-red-500 text-white placeholder-gray-400 transition-colors"
                         placeholder="Enter your full name"
                         required
                       />
@@ -514,7 +514,7 @@ const IndexPage: React.FC<PageProps> = () => {
                       </label>
                       <input
                         type="email"
-                        className="w-full px-4 py-3 bg-dark/50 border border-gold-900/30 rounded-sm focus:border-gold-500 focus:ring-1 focus:ring-gold-500 text-white placeholder-gray-400 transition-colors"
+                        className="w-full px-4 py-3 bg-dark/50 border border-red-900/30 rounded-sm focus:border-red-500 focus:ring-1 focus:ring-red-500 text-white placeholder-gray-400 transition-colors"
                         placeholder="Enter your email"
                         required
                       />
@@ -557,7 +557,7 @@ const IndexPage: React.FC<PageProps> = () => {
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-gold-600 hover:bg-gold-500 text-white font-bold py-4 rounded-sm transition-colors uppercase tracking-wide"
+                    className="w-full bg-red-600 hover:bg-red-500 text-white font-bold py-4 rounded-sm transition-colors uppercase tracking-wide"
                   >
                     Send Message
                   </button>
