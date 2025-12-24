@@ -91,7 +91,7 @@ export const translations = {
       lastUpdated: "Última actualización: Por definir",
       introduction: {
         heading: "Introducción",
-        text: "Esta Política de Privacidad describe cómo Summit Tax Accounting recopila, utiliza y protege su información personal.",
+        text: "Esta Política de Privacidad describe cómo {brand} recopila, utiliza y protege su información personal.",
       },
     },
     termsAndConditions: {
@@ -126,7 +126,7 @@ export const translations = {
       languageNotice: "Este formulario se muestra en inglés. Contáctenos para asistencia en español.",
     },
     hero: {
-      title: "Summit Tax Accounting",
+      title: "{brand}",
       subtitle: "Dominando la Eficiencia Fiscal",
       slogan: "Le enseñamos a dueños de negocios e inversionistas cómo reducir su factura de impuestos.",
       cta: "Agendar Cita",
@@ -135,13 +135,13 @@ export const translations = {
     about: {
       title: "Dominando la Eficiencia Fiscal",
       subtitle: "Estrategas Fiscales Licenciados",
-      description: "Summit Tax Accounting es una firma de estrategia fiscal de primer nivel especializada en ayudar a dueños de negocios e inversionistas inmobiliarios a reducir significativamente sus cargas fiscales.",
+      description: "{brand} es una firma de estrategia fiscal de primer nivel especializada en ayudar a dueños de negocios e inversionistas inmobiliarios a reducir significativamente sus cargas fiscales.",
       whyChooseUs: "¿Por Qué Elegirnos?",
       whyChooseUsText: "Nuestro enfoque único combina un análisis profundo de estrategia fiscal y planificación personalizada para descubrir oportunidades de ahorro.",
       experienceBadge: "Más de 23 años de experiencia",
     },
     video: {
-      title: "Conozca Más Sobre Summit Tax Accounting",
+      title: "Conozca Más Sobre {brand}",
     },
     process: {
       title: "Nuestro Proceso",
@@ -286,7 +286,7 @@ export const translations = {
       lastUpdated: "Last Updated: To be defined",
       introduction: {
         heading: "Introduction",
-        text: "This Privacy Policy describes how Summit Tax Accounting collects, uses, and protects your personal information.",
+        text: "This Privacy Policy describes how {brand} collects, uses, and protects your personal information.",
       },
     },
     termsAndConditions: {
@@ -321,7 +321,7 @@ export const translations = {
       languageNotice: "This form is displayed in English. Contact us for assistance in Spanish.",
     },
     hero: {
-      title: "Summit Tax Accounting",
+      title: "{brand}",
       subtitle: "Mastering Tax Efficiency",
       slogan: "We teach business owners and real estate investors how to reduce their tax bill.",
       cta: "Schedule Now",
@@ -330,13 +330,13 @@ export const translations = {
     about: {
       title: "Mastering Tax Efficiency",
       subtitle: "Licensed Tax Strategists",
-      description: "Summit Tax Accounting is a premier tax strategy firm specializing in helping business owners and real estate investors significantly reduce their tax burdens.",
-      whyChooseUs: "Why Choose Summit Tax Accounting?",
+      description: "{brand} is a premier tax strategy firm specializing in helping business owners and real estate investors significantly reduce their tax burdens.",
+      whyChooseUs: "Why Choose {brand}?",
       whyChooseUsText: "Our unique approach combines in-depth tax strategy analysis and personalized planning to uncover opportunities for savings.",
       experienceBadge: "More than 23 years of experience",
     },
     video: {
-      title: "Know More About Summit Tax Accounting",
+      title: "Know More About {brand}",
     },
     process: {
       title: "Our Process",

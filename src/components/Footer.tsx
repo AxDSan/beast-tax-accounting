@@ -53,10 +53,9 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-white font-sans font-semibold mb-8 text-sm uppercase tracking-wider">{t.footer.contact}</h4>
             <ul className="space-y-4 text-gray-400 text-sm font-sans">
-              <li>123 Tax Ave, Suite 100</li>
-              <li>Miami, FL 33131</li>
-              <li>Tel: 123-456-7890</li>
-              <li>Email: info@beasttax.com</li>
+              <li className="whitespace-pre-line">{config.address}</li>
+              <li>Tel: {config.phone}</li>
+              <li>Email: {config.email}</li>
             </ul>
           </div>
 

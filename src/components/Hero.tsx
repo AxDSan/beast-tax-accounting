@@ -1,6 +1,7 @@
 import * as React from "react"
 import { motion } from "framer-motion"
 import { useI18n } from "../i18n"
+import { useConfig } from "../context/ConfigContext"
 
 interface HeroProps {
   videoSrc?: string
@@ -14,8 +15,11 @@ const Hero: React.FC<HeroProps> = ({
   slogan,
 }) => {
   const { t } = useI18n()
-  const title = t.hero.title
-  const subtitle = t.hero.subtitle
+  const { config } = useConfig()
+  
+  const brandName = `${config.brandNameFirst} ${config.brandNameSecond}`.trim() || "Summit Tax Accounting"
+  const title = t.hero.title.replace(/{brand}/g, brandName)
+  const subtitle = t.hero.subtitle.replace(/{brand}/g, brandName)
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-dark">

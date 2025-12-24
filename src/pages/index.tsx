@@ -17,6 +17,10 @@ import {
 const IndexPage: React.FC<PageProps> = () => {
   const { t } = useI18n()
   const { config } = useConfig()
+  
+  const brandName = `${config.brandNameFirst} ${config.brandNameSecond}`.trim() || "Summit Tax Accounting"
+
+  const replaceBrand = (text: string) => text.replace(/{brand}/g, brandName)
 
 
   // Team members
@@ -253,19 +257,19 @@ const IndexPage: React.FC<PageProps> = () => {
                 </ScrollSlideIn>
                 <ScrollSlideIn side="right">
                   <h2 className="text-4xl md:text-5xl font-heading font-normal text-white mb-4 leading-none">
-                    {t.about.title}
+                    {replaceBrand(t.about.title)}
                   </h2>
                   <p className="text-xl text-red-400 font-heading italic mb-8">
-                    {t.about.subtitle}
+                    {replaceBrand(t.about.subtitle)}
                   </p>
                 </ScrollSlideIn>
                 <ScrollSlideIn side="right">
                   <div className="space-y-6">
                     <p className="text-lg text-gray-300 font-light leading-relaxed border-l-2 border-red-900 pl-6">
-                      {t.about.description}
+                      {replaceBrand(t.about.description)}
                     </p>
                     <p className="text-base text-gray-400 leading-relaxed font-sans">
-                      {t.about.whyChooseUsText}
+                      {replaceBrand(t.about.whyChooseUsText)}
                     </p>
                   </div>
                 </ScrollSlideIn>
@@ -281,7 +285,7 @@ const IndexPage: React.FC<PageProps> = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-20">
           <ScrollFadeIn direction="down">
             <h2 className="text-3xl md:text-4xl underline font-heading font-normal text-center text-white mb-12">
-              {t.video.title}
+              {replaceBrand(t.video.title)}
             </h2>
           </ScrollFadeIn>
           <ScrollScaleIn scale={0.9}>

@@ -4,10 +4,12 @@ import Layout from "../components/Layout"
 import Section from "../components/Section"
 
 import SEO from "../components/SEO"
+import { useConfig } from "../context/ConfigContext"
 
 import { motion } from "framer-motion"
 
 const TermsAndConditionsPage: React.FC<PageProps> = () => {
+  const { config } = useConfig()
   
 
   React.useEffect(() => {
