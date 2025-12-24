@@ -5,9 +5,9 @@ import * as dotenv from "dotenv"
 dotenv.config()
 
 const DEFAULT_CONFIG = {
-  companyName: 'Beast Tax Accounting LLC',
-  brandNameFirst: 'Beast',
-  brandNameSecond: 'Tax',
+  companyName: 'Summit Tax Accounting LLC',
+  brandNameFirst: 'Summit',
+  brandNameSecond: 'Tax Accounting',
   ceoName: 'Edwin Venezuela',
   ceoRole: 'CEO & Founder',
   ceoImage: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800',

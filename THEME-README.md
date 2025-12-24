@@ -1,4 +1,4 @@
-# Beast Tax Accounting - Theme Configuration
+# Summit Tax Accounting - Theme Configuration
 
 ## How to Change Theme Colors
 

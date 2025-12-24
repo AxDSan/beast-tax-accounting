@@ -4,10 +4,12 @@ import Layout from "../components/Layout"
 import Section from "../components/Section"
 
 import SEO from "../components/SEO"
+import { useConfig } from "../context/ConfigContext"
 
 import { motion } from "framer-motion"
 
 const PrivacyPolicyPage: React.FC<PageProps> = () => {
+  const { config } = useConfig()
   
 
   React.useEffect(() => {
@@ -39,7 +41,7 @@ const PrivacyPolicyPage: React.FC<PageProps> = () => {
                 
               </h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                This Privacy Policy describes how Beast Tax Accounting collects, uses, and protects your personal information.
+                This Privacy Policy describes how {config.companyName} collects, uses, and protects your personal information.
               </p>
             </section>
 
@@ -58,7 +60,7 @@ export default PrivacyPolicyPage
 export const Head: HeadFC = () => (
   <SEO
     title="Privacy Policy"
-    description="Privacy Policy for Beast Tax Accounting"
+    description="Privacy Policy for our tax accounting services"
     pathname="/privacy-policy"
   />
 )

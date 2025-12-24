@@ -2,13 +2,13 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: "Beast Tax Accounting",
-    titleTemplate: "%s | Beast Tax Accounting",
+    title: "Summit Tax Accounting",
+    titleTemplate: "%s | Summit Tax Accounting",
     description: "Professional services for your business needs",
-    siteUrl: "https://beast-tax-accounting.com",
+    siteUrl: "https://summit-tax-accounting.com",
     image: "/og-image.png",
     twitterUsername: "",
-    author: "Beast Tax Accounting",
+    author: "Summit Tax Accounting",
     lang: "en",
     locale: "en_US",
     phone: "123-456-7890",
@@ -62,8 +62,8 @@ const config: GatsbyConfig = {
     // {
     //   resolve: "gatsby-plugin-manifest",
     //   options: {
-    //     name: "Beast Tax Accounting",
-    //     short_name: "Beast Tax Accounting",
+    //     name: "Summit Tax Accounting",
+    //     short_name: "Summit Tax Accounting",
     //     description: "Professional services for your business needs",
     //     start_url: "/",
     //     background_color: "#0a0a0a",

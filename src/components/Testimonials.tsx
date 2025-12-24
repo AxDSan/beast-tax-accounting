@@ -9,7 +9,7 @@ const Testimonials: React.FC = () => {
     {
       name: "Client 1",
       role: "Business Owner",
-      content: "Beast Tax Accounting transformed our tax strategy. We saved significantly more than we invested in their services.",
+      content: "Summit Tax Accounting transformed our tax strategy. We saved significantly more than we invested in their services.",
       initials: "C1"
     },
     {

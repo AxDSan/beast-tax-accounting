@@ -58,7 +58,7 @@ export default TermsAndConditionsPage
 export const Head: HeadFC = () => (
   <SEO
     title="Terms and Conditions"
-    description="Terms and Conditions for Beast Tax Accounting"
+    description="Terms and Conditions for our tax accounting services"
     pathname="/terms-and-conditions"
   />
 )

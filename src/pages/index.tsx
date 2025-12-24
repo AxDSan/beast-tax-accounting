@@ -295,7 +295,7 @@ const IndexPage: React.FC<PageProps> = () => {
               <iframe
                 className="w-full h-full"
                 src="https://www.youtube.com/embed/p-kasvTzniE"
-                title="Beast Tax Accounting Video"
+                title="Summit Tax Accounting Video"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />

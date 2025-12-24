@@ -1,4 +1,4 @@
-// Theme Configuration for Beast Tax Accounting
+// Theme Configuration for Summit Tax Accounting
 // Easily switch between different color themes by changing the 'currentTheme' variable
 
 export type ThemeName = 'red' | 'blue' | 'green' | 'orange' | 'pink' | 'purple' | 'gold';

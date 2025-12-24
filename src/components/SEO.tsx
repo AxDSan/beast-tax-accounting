@@ -14,13 +14,13 @@ interface SEOProps {
 
 // Site metadata - modify these values to update SEO across the site
 const siteMetadata = {
-  title: "Beast Tax Accounting",
-  titleTemplate: "%s | Beast Tax Accounting",
+  title: "Summit Tax Accounting",
+  titleTemplate: "%s | Summit Tax Accounting",
   description: "Professional services for your business needs",
-  siteUrl: "https://beast-tax-accounting.com",
+  siteUrl: "https://summit-tax-accounting.com",
   image: "/og-image.jpg",
   twitterUsername: "",
-  author: "Beast Tax Accounting",
+  author: "Summit Tax Accounting",
   lang: "en",
   locale: "en_US",
   phone: "123-456-7890",
@@ -43,9 +43,10 @@ const siteMetadata = {
     linkedin: ""
   },
   keywords: [
-    "keyword1",
-      "keyword2",
-      "keyword3"
+    "tax accounting",
+    "tax planning",
+    "business tax services",
+    "tax consulting"
   ]
 }
 

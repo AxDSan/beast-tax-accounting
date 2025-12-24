@@ -8,7 +8,7 @@ All templates use `{{VARIABLE}}` placeholders that get replaced during generatio
 
 ### Client Information
 - `beast-tax-accounting` - Project name (kebab-case)
-- `Beast Tax Accounting` - Company display name
+- `Summit Tax Accounting` - Company display name
 - `Professional services for your business needs` - Business description
 - `Edwin Venezuela` - Author name
 

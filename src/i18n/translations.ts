@@ -91,7 +91,7 @@ export const translations = {
       lastUpdated: "Última actualización: Por definir",
       introduction: {
         heading: "Introducción",
-        text: "Esta Política de Privacidad describe cómo Beast Tax Accounting recopila, utiliza y protege su información personal.",
+        text: "Esta Política de Privacidad describe cómo Summit Tax Accounting recopila, utiliza y protege su información personal.",
       },
     },
     termsAndConditions: {
@@ -135,13 +135,13 @@ export const translations = {
     about: {
       title: "Dominando la Eficiencia Fiscal",
       subtitle: "Estrategas Fiscales Licenciados",
-      description: "Beast Tax Accounting es una firma de estrategia fiscal de primer nivel especializada en ayudar a dueños de negocios e inversionistas inmobiliarios a reducir significativamente sus cargas fiscales.",
+      description: "Summit Tax Accounting es una firma de estrategia fiscal de primer nivel especializada en ayudar a dueños de negocios e inversionistas inmobiliarios a reducir significativamente sus cargas fiscales.",
       whyChooseUs: "¿Por Qué Elegirnos?",
       whyChooseUsText: "Nuestro enfoque único combina un análisis profundo de estrategia fiscal y planificación personalizada para descubrir oportunidades de ahorro.",
       experienceBadge: "Más de 23 años de experiencia",
     },
     video: {
-      title: "Conozca Más Sobre Beast Tax Accounting",
+      title: "Conozca Más Sobre Summit Tax Accounting",
     },
     process: {
       title: "Nuestro Proceso",
@@ -285,7 +285,7 @@ export const translations = {
       lastUpdated: "Last Updated: To be defined",
       introduction: {
         heading: "Introduction",
-        text: "This Privacy Policy describes how Beast Tax Accounting collects, uses, and protects your personal information.",
+        text: "This Privacy Policy describes how Summit Tax Accounting collects, uses, and protects your personal information.",
       },
     },
     termsAndConditions: {
@@ -329,13 +329,13 @@ export const translations = {
     about: {
       title: "Mastering Tax Efficiency",
       subtitle: "Licensed Tax Strategists",
-      description: "Beast Tax Accounting is a premier tax strategy firm specializing in helping business owners and real estate investors significantly reduce their tax burdens.",
-      whyChooseUs: "Why Choose Beast Tax Accounting?",
+      description: "Summit Tax Accounting is a premier tax strategy firm specializing in helping business owners and real estate investors significantly reduce their tax burdens.",
+      whyChooseUs: "Why Choose Summit Tax Accounting?",
       whyChooseUsText: "Our unique approach combines in-depth tax strategy analysis and personalized planning to uncover opportunities for savings.",
       experienceBadge: "More than 23 years of experience",
     },
     video: {
-      title: "Know More About Beast Tax Accounting",
+      title: "Know More About Summit Tax Accounting",
     },
     process: {
       title: "Our Process",
