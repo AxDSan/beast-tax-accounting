@@ -126,7 +126,7 @@ export const translations = {
       languageNotice: "Este formulario se muestra en inglés. Contáctenos para asistencia en español.",
     },
     hero: {
-      title: "Beast Tax Accounting",
+      title: "Summit Tax Accounting",
       subtitle: "Dominando la Eficiencia Fiscal",
       slogan: "Le enseñamos a dueños de negocios e inversionistas cómo reducir su factura de impuestos.",
       cta: "Agendar Cita",
@@ -320,7 +320,7 @@ export const translations = {
       languageNotice: "This form is displayed in English. Contact us for assistance in Spanish.",
     },
     hero: {
-      title: "Beast Tax Accounting",
+      title: "Summit Tax Accounting",
       subtitle: "Mastering Tax Efficiency",
       slogan: "We teach business owners and real estate investors how to reduce their tax bill.",
       cta: "Schedule Now",

@@ -41,7 +41,7 @@ export const ConfigProvider: React.FC<{ children: React.ReactNode }> = ({ childr
 
   useEffect(() => {
     // 1. Try local storage first for speed
-    const savedConfig = localStorage.getItem('beast-brand-config');
+    const savedConfig = localStorage.getItem('summit-brand-config');
     if (savedConfig) {
       try {
         setConfig(JSON.parse(savedConfig));
@@ -54,7 +54,7 @@ export const ConfigProvider: React.FC<{ children: React.ReactNode }> = ({ childr
       .then(data => {
         if (data && !data.error) {
           setConfig(data);
-          localStorage.setItem('beast-brand-config', JSON.stringify(data));
+          localStorage.setItem('summit-brand-config', JSON.stringify(data));
         }
       })
       .catch(err => console.error('Failed to fetch config from API', err));
@@ -65,7 +65,7 @@ export const ConfigProvider: React.FC<{ children: React.ReactNode }> = ({ childr
 
     // Optimistic update
     setConfig(updated);
-    localStorage.setItem('beast-brand-config', JSON.stringify(updated));
+    localStorage.setItem('summit-brand-config', JSON.stringify(updated));
 
     // Persist to SQLite via API
     try {
@@ -87,7 +87,7 @@ export const ConfigProvider: React.FC<{ children: React.ReactNode }> = ({ childr
 
   const resetConfig = async () => {
     setConfig(DEFAULT_CONFIG);
-    localStorage.removeItem('beast-brand-config');
+    localStorage.removeItem('summit-brand-config');
 
     try {
       await fetch('/api/config', {

@@ -1,4 +1,5 @@
 import * as React from "react"
+import { useConfig } from "../context/ConfigContext"
 
 interface SEOProps {
   title?: string
@@ -58,28 +59,41 @@ const SEO: React.FC<SEOProps> = ({
   keywords = [],
   children
 }) => {
-  const seo = {
-    title: title || siteMetadata.title,
-    description: description || siteMetadata.description,
-    image: `${siteMetadata.siteUrl}${image || siteMetadata.image}`,
-    url: `${siteMetadata.siteUrl}${pathname}`,
-    keywords: [...siteMetadata.keywords, ...keywords].join(", ")
+  const { config } = useConfig()
+
+  // Dynamic site metadata using config
+  const dynamicSiteMetadata = {
+    ...siteMetadata,
+    title: `${config.brandNameFirst} ${config.brandNameSecond}`,
+    titleTemplate: `%s | ${config.brandNameFirst} ${config.brandNameSecond}`,
+    author: config.companyName,
+    phone: config.phone,
+    email: config.email,
+    whatsapp: config.whatsapp,
   }
 
-  const fullTitle = title 
-    ? siteMetadata.titleTemplate.replace("%s", title)
-    : siteMetadata.title
+  const seo = {
+    title: title || dynamicSiteMetadata.title,
+    description: description || dynamicSiteMetadata.description,
+    image: `${dynamicSiteMetadata.siteUrl}${image || dynamicSiteMetadata.image}`,
+    url: `${dynamicSiteMetadata.siteUrl}${pathname}`,
+    keywords: [...dynamicSiteMetadata.keywords, ...keywords].join(", ")
+  }
+
+  const fullTitle = title
+    ? dynamicSiteMetadata.titleTemplate.replace("%s", title)
+    : dynamicSiteMetadata.title
 
   // Local Business Schema
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "AccountingService",
-    "@id": `${siteMetadata.siteUrl}/#business`,
-    name: siteMetadata.title,
-    description: siteMetadata.description,
-    url: siteMetadata.siteUrl,
-    telephone: siteMetadata.phone,
-    email: siteMetadata.email,
+    "@id": `${dynamicSiteMetadata.siteUrl}/#business`,
+    name: dynamicSiteMetadata.title,
+    description: dynamicSiteMetadata.description,
+    url: dynamicSiteMetadata.siteUrl,
+    telephone: dynamicSiteMetadata.phone,
+    email: dynamicSiteMetadata.email,
     image: seo.image,
     logo: `${siteMetadata.siteUrl}/logo.png`,
     priceRange: "$$",
@@ -115,23 +129,23 @@ const SEO: React.FC<SEOProps> = ({
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": `${siteMetadata.siteUrl}/#website`,
-    url: siteMetadata.siteUrl,
-    name: siteMetadata.title,
-    description: siteMetadata.description,
+    "@id": `${dynamicSiteMetadata.siteUrl}/#website`,
+    url: dynamicSiteMetadata.siteUrl,
+    name: dynamicSiteMetadata.title,
+    description: dynamicSiteMetadata.description,
     publisher: {
-      "@id": `${siteMetadata.siteUrl}/#organization`
+      "@id": `${dynamicSiteMetadata.siteUrl}/#organization`
     },
-    inLanguage: siteMetadata.lang
+    inLanguage: dynamicSiteMetadata.lang
   }
 
   // Organization Schema
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": `${siteMetadata.siteUrl}/#organization`,
-    name: siteMetadata.title,
-    url: siteMetadata.siteUrl,
+    "@id": `${dynamicSiteMetadata.siteUrl}/#organization`,
+    name: dynamicSiteMetadata.title,
+    url: dynamicSiteMetadata.siteUrl,
     logo: {
       "@type": "ImageObject",
       url: `${siteMetadata.siteUrl}/logo.png`,
@@ -161,7 +175,7 @@ const SEO: React.FC<SEOProps> = ({
         "@type": "ListItem",
         position: 1,
         name: "Inicio",
-        item: siteMetadata.siteUrl
+        item: dynamicSiteMetadata.siteUrl
       },
       ...(pathname && pathname !== "/" ? [{
         "@type": "ListItem",
@@ -179,7 +193,7 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="title" content={fullTitle} />
       <meta name="description" content={seo.description} />
       <meta name="keywords" content={seo.keywords} />
-      <meta name="author" content={siteMetadata.author} />
+      <meta name="author" content={dynamicSiteMetadata.author} />
       <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"} />
       <meta name="googlebot" content={noindex ? "noindex, nofollow" : "index, follow"} />
       <link rel="canonical" href={seo.url} />
@@ -194,7 +208,7 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:image:alt" content={seo.title} />
-      <meta property="og:site_name" content={siteMetadata.title} />
+      <meta property="og:site_name" content={dynamicSiteMetadata.title} />
       <meta property="og:locale" content={siteMetadata.locale} />
 
       {/* Twitter */}
@@ -203,19 +217,19 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={seo.description} />
       <meta name="twitter:image" content={seo.image} />
-      {siteMetadata.twitterUsername && (
+      {dynamicSiteMetadata.twitterUsername && (
         <>
-          <meta name="twitter:site" content={siteMetadata.twitterUsername} />
-          <meta name="twitter:creator" content={siteMetadata.twitterUsername} />
+          <meta name="twitter:site" content={dynamicSiteMetadata.twitterUsername} />
+          <meta name="twitter:creator" content={dynamicSiteMetadata.twitterUsername} />
         </>
       )}
 
       {/* Additional SEO */}
       <meta name="format-detection" content="telephone=yes" />
-      <meta name="geo.region" content={siteMetadata.address.state} />
-      <meta name="geo.placename" content={`${siteMetadata.address.city}, ${siteMetadata.address.country}`} />
-      <meta name="geo.position" content={`${siteMetadata.geo.latitude};${siteMetadata.geo.longitude}`} />
-      <meta name="ICBM" content={`${siteMetadata.geo.latitude}, ${siteMetadata.geo.longitude}`} />
+      <meta name="geo.region" content={dynamicSiteMetadata.address.state} />
+      <meta name="geo.placename" content={`${dynamicSiteMetadata.address.city}, ${dynamicSiteMetadata.address.country}`} />
+      <meta name="geo.position" content={`${dynamicSiteMetadata.geo.latitude};${dynamicSiteMetadata.geo.longitude}`} />
+      <meta name="ICBM" content={`${dynamicSiteMetadata.geo.latitude}, ${dynamicSiteMetadata.geo.longitude}`} />
 
       {/* Preconnect for performance */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
