@@ -219,7 +219,7 @@ const IndexPage: React.FC<PageProps> = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <Hero videoSrc="/taxes2go.mp4" logoSrc={config.logo} />
+      <Hero videoSrc="/taxes2go.mp4" />
 
       {/* About Section */}
       <SectionWrapper id="about" className="py-24 lg:py-32 bg-dark text-white relative overflow-hidden">

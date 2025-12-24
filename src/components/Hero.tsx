@@ -5,13 +5,11 @@ import { useConfig } from "../context/ConfigContext"
 
 interface HeroProps {
   videoSrc?: string
-  logoSrc?: string
   slogan?: string
 }
 
 const Hero: React.FC<HeroProps> = ({
   videoSrc,
-  logoSrc,
   slogan,
 }) => {
   const { t } = useI18n()
@@ -36,29 +34,18 @@ const Hero: React.FC<HeroProps> = ({
       <div className="absolute inset-0 bg-gradient-to-b from-dark/60 via-dark/40 to-dark/70" />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 text-center">
-        {logoSrc ? (
-          <motion.img
-            src={logoSrc}
-            alt={title}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="h-32 md:h-48 w-auto mx-auto mb-8"
-          />
-        ) : (
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-8 text-white font-heading">
-              <span className="block text-lg md:text-2xl font-sans font-medium text-red-500 uppercase tracking-[0.2em] mb-4">
-                Welcome to
-              </span>
-              {title}
-            </h1>
-          </motion.div>
-        )}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-8 text-white font-heading">
+            <span className="block text-lg md:text-2xl font-sans font-medium text-red-500 uppercase tracking-[0.2em] mb-4">
+              Welcome to
+            </span>
+            {title}
+          </h1>
+        </motion.div>
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
