@@ -3,6 +3,7 @@ import Navbar from "./Navbar"
 import Footer from "./Footer"
 import SmoothScroll from "./SmoothScroll"
 import { AdminDashboard } from "./AdminDashboard"
+import ChatWidget from "./ChatWidget"
 
 interface LayoutProps {
   children: React.ReactNode
@@ -16,6 +17,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <main className="flex-grow">{children}</main>
         <Footer />
         <AdminDashboard />
+        <ChatWidget />
       </div>
     </SmoothScroll>
   )
