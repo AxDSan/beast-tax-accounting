@@ -5,7 +5,6 @@ interface BrandConfig {
   brandNameFirst: string;
   brandNameSecond: string;
   logo: string;
-  aboutImage: string;
   ceoName: string;
   ceoRole: string;
   ceoImage: string;
@@ -26,7 +25,6 @@ export const DEFAULT_CONFIG: BrandConfig = {
   brandNameFirst: 'Summit',
   brandNameSecond: 'Tax',
   logo: '',
-  aboutImage: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
   ceoName: 'Edwin Venezuela',
   ceoRole: 'CEO & Founder',
   ceoImage: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800',

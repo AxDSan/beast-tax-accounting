@@ -237,7 +237,7 @@ const IndexPage: React.FC<PageProps> = () => {
                 <div className="relative z-10 rounded-sm overflow-hidden shadow-2xl border border-red-900/50">
                    <div className="aspect-[3/4] relative">
                      <img
-                        src={config.aboutImage}
+                        src={config.ceoImage}
                         alt="Tax Strategy"
                         loading="lazy"
                         className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105 filter grayscale group-hover:grayscale-0"

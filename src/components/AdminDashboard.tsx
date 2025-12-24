@@ -4,6 +4,57 @@ import { useConfig, DEFAULT_CONFIG } from '../context/ConfigContext';
 import { useI18n } from '../i18n';
 import { getTextClasses } from '../theme';
 
+interface ImageUploadProps {
+  label: string;
+  value: string | undefined;
+  fieldName: string;
+  onUpload: (e: React.ChangeEvent<HTMLInputElement>, fieldName: string) => void;
+  hint?: string;
+  aspectRatio?: 'cover' | 'contain';
+}
+
+const ImageUpload: React.FC<ImageUploadProps> = ({ 
+  label, 
+  value, 
+  fieldName, 
+  onUpload, 
+  hint,
+  aspectRatio = 'cover'
+}) => {
+  const { t } = useI18n();
+  return (
+    <div>
+      <label className="block text-xs font-semibold text-gray-500 mb-1">{label}</label>
+      <div className="flex items-center gap-4">
+        {value && (
+          <div className="w-20 h-20 rounded-xl overflow-hidden bg-gray-100 border border-gray-200 dark:border-white/10 flex-shrink-0">
+            <img src={value} alt={`${label} Preview`} className={`w-full h-full object-${aspectRatio}`} />
+          </div>
+        )}
+        <div className="flex-grow">
+          <label className="relative flex flex-col items-center justify-center w-full h-20 border-2 border-dashed border-gray-200 dark:border-white/10 rounded-xl hover:bg-gray-50 dark:hover:bg-white/5 transition-colors cursor-pointer">
+            <div className="flex items-center gap-3 text-gray-400">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+              </svg>
+              <div className="flex flex-col items-center">
+                <span className="text-xs font-medium">{t.admin?.uploadImage || "Click to upload image"}</span>
+                {hint && <span className="text-[10px] opacity-60">{hint}</span>}
+              </div>
+            </div>
+            <input
+              type="file"
+              className="hidden"
+              accept="image/*"
+              onChange={(e) => onUpload(e, fieldName)}
+            />
+          </label>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const AdminDashboard: React.FC = () => {
   const { t } = useI18n();
   const { config, updateConfig, resetConfig } = useConfig();
@@ -162,64 +213,14 @@ export const AdminDashboard: React.FC = () => {
                           />
                         </div>
                       </div>
-                      <div>
-                        <label className="block text-xs font-semibold text-gray-500 mb-1">Logo</label>
-                        <div className="flex items-center gap-4">
-                          {formData.logo && (
-                            <div className="w-20 h-20 rounded-xl overflow-hidden bg-gray-100 border border-gray-200 dark:border-white/10 flex-shrink-0">
-                              <img src={formData.logo} alt="Logo Preview" className="w-full h-full object-contain" />
-                            </div>
-                          )}
-                          <div className="flex-grow">
-                            <label className="relative flex flex-col items-center justify-center w-full h-20 border-2 border-dashed border-gray-200 dark:border-white/10 rounded-xl hover:bg-gray-50 dark:hover:bg-white/5 transition-colors cursor-pointer">
-                              <div className="flex items-center gap-3 text-gray-400">
-                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
-                                </svg>
-                                <div className="flex flex-col items-center">
-                                  <span className="text-xs font-medium">{t.admin?.uploadImage || "Click to upload image"}</span>
-                                  <span className="text-[10px] opacity-60">(PNG, SVG preferred)</span>
-                                </div>
-                              </div>
-                              <input
-                                type="file"
-                                className="hidden"
-                                accept="image/*"
-                                onChange={(e) => handleImageUpload(e, 'logo')}
-                              />
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                      <div>
-                        <label className="block text-xs font-semibold text-gray-500 mb-1">{t.admin?.aboutImage || "About Section Image"}</label>
-                        <div className="flex items-center gap-4">
-                          {formData.aboutImage && (
-                            <div className="w-20 h-20 rounded-xl overflow-hidden bg-gray-100 border border-gray-200 dark:border-white/10 flex-shrink-0">
-                              <img src={formData.aboutImage} alt="About Image Preview" className="w-full h-full object-cover" />
-                            </div>
-                          )}
-                          <div className="flex-grow">
-                            <label className="relative flex flex-col items-center justify-center w-full h-20 border-2 border-dashed border-gray-200 dark:border-white/10 rounded-xl hover:bg-gray-50 dark:hover:bg-white/5 transition-colors cursor-pointer">
-                              <div className="flex items-center gap-3 text-gray-400">
-                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
-                                </svg>
-                                <div className="flex flex-col items-center">
-                                  <span className="text-xs font-medium">{t.admin?.uploadImage || "Click to upload image"}</span>
-                                  <span className="text-[10px] opacity-60">(High Quality)</span>
-                                </div>
-                              </div>
-                              <input
-                                type="file"
-                                className="hidden"
-                                accept="image/*"
-                                onChange={(e) => handleImageUpload(e, 'aboutImage')}
-                              />
-                            </label>
-                          </div>
-                        </div>
-                      </div>
+                      <ImageUpload
+                        label="Logo"
+                        value={formData.logo}
+                        fieldName="logo"
+                        onUpload={handleImageUpload}
+                        hint="(PNG, SVG preferred)"
+                        aspectRatio="contain"
+                      />
                     </div>
 
                     <h3 className="text-sm font-bold uppercase tracking-widest text-red-600 mt-8">{t.admin?.ceoInfo || "CEO Info"}</h3>
@@ -242,35 +243,13 @@ export const AdminDashboard: React.FC = () => {
                           className="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl px-4 py-3 text-sm outline-none focus:border-red-600 transition-colors"
                         />
                       </div>
-                      <div>
-                        <label className="block text-xs font-semibold text-gray-500 mb-1">{t.admin?.imageUrl || "CEO Image"}</label>
-                        <div className="flex items-center gap-4">
-                          {formData.ceoImage && (
-                            <div className="w-20 h-20 rounded-xl overflow-hidden bg-gray-100 border border-gray-200 dark:border-white/10 flex-shrink-0">
-                              <img src={formData.ceoImage} alt="CEO Preview" className="w-full h-full object-cover" />
-                            </div>
-                          )}
-                          <div className="flex-grow">
-                            <label className="relative flex flex-col items-center justify-center w-full h-20 border-2 border-dashed border-gray-200 dark:border-white/10 rounded-xl hover:bg-gray-50 dark:hover:bg-white/5 transition-colors cursor-pointer">
-                              <div className="flex items-center gap-3 text-gray-400">
-                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
-                                </svg>
-                                <div className="flex flex-col items-center">
-                                  <span className="text-xs font-medium">{t.admin?.uploadImage || "Click to upload image"}</span>
-                                  <span className="text-[10px] opacity-60">(High Quality)</span>
-                                </div>
-                              </div>
-                              <input
-                                type="file"
-                                className="hidden"
-                                accept="image/*"
-                                onChange={(e) => handleImageUpload(e, 'ceoImage')}
-                              />
-                            </label>
-                          </div>
-                        </div>
-                      </div>
+                      <ImageUpload
+                        label={t.admin?.imageUrl || "CEO / About Section Image"}
+                        value={formData.ceoImage}
+                        fieldName="ceoImage"
+                        onUpload={handleImageUpload}
+                        hint="(High Quality)"
+                      />
                     </div>
 
                     <h3 className="text-sm font-bold uppercase tracking-widest text-red-600 mt-8">Contacto</h3>
