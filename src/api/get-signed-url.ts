@@ -2,11 +2,16 @@ import { GatsbyFunctionRequest, GatsbyFunctionResponse } from "gatsby"
 import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3"
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner"
 
-// NOTE: In a production environment, these should be in your .env file
-const S3_ENDPOINT = "https://ohvspaqxiylcjfomwpmq.storage.supabase.co/storage/v1/s3"
-const S3_ACCESS_KEY = "1255d084f79b93fe9e9a1c0bbb6a5b5a"
-const S3_SECRET_KEY = "f22cba480ba8119b38f93a78cdff970e8219bdfad89eef54371b27ee2ba6f3d7"
-const BUCKET_NAME = "brand-assets"
+// S3 Configuration from environment variables
+const S3_ENDPOINT = process.env.S3_ENDPOINT
+const S3_ACCESS_KEY = process.env.S3_ACCESS_KEY
+const S3_SECRET_KEY = process.env.S3_SECRET_KEY
+const BUCKET_NAME = process.env.BUCKET_NAME
+
+// Validate S3 configuration
+if (!S3_ENDPOINT || !S3_ACCESS_KEY || !S3_SECRET_KEY || !BUCKET_NAME) {
+  throw new Error("S3 configuration incomplete. Missing required environment variables: S3_ENDPOINT, S3_ACCESS_KEY, S3_SECRET_KEY, BUCKET_NAME")
+}
 
 const s3Client = new S3Client({
   forcePathStyle: true, // Required for Supabase S3
@@ -51,7 +56,9 @@ export default async function handler(
     // The public URL for viewing the file later
     // Supabase public URL format: https://[project-id].supabase.co/storage/v1/object/public/[bucket]/[key]
     // We add a timestamp as a cache buster to ensure the frontend sees the new image immediately
-    const publicUrl = `https://ohvspaqxiylcjfomwpmq.supabase.co/storage/v1/object/public/${BUCKET_NAME}/${key}?t=${Date.now()}`
+    const supabaseUrl = process.env.SUPABASE_URL || process.env.GATSBY_SUPABASE_URL || ''
+    const projectId = supabaseUrl.replace('https://', '').split('.')[0]
+    const publicUrl = `https://${projectId}.supabase.co/storage/v1/object/public/${BUCKET_NAME}/${key}?t=${Date.now()}`
 
     res.json({ uploadUrl: signedUrl, publicUrl })
   } catch (error: any) {
