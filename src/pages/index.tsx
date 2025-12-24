@@ -22,14 +22,30 @@ const IndexPage: React.FC<PageProps> = () => {
   // Team members
   const teamMembers = [
     {
-      name: "Team Member 1",
-      title: "CEO & Tax Strategist",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop",
+      name: "Sofia Ramirez",
+      title: "Payroll Manager",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=800&h=800&crop=top",
     },
     {
-      name: "Team Member 2",
-      title: "Tax Specialist",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop",
+      name: config.ceoName || "Edwin Venezuela",
+      title: config.ceoRole || "CEO & Founder",
+      image: config.ceoImage || "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800&h=800&crop=top",
+      isCEO: true
+    },
+    {
+      name: "Miguel Hernandez",
+      title: "Tax Consultant",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=800&h=800&crop=top",
+    },
+    {
+      name: "Isabella Torres",
+      title: "Business Advisor",
+      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=800&h=800&crop=top",
+    },
+    {
+      name: "Alejandro Ruiz",
+      title: "Audit Specialist",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800&h=800&crop=top",
     },
   ]
 
@@ -290,15 +306,15 @@ const IndexPage: React.FC<PageProps> = () => {
               {t.nav.team}
             </h2>
           </ScrollFadeIn>
-          <ScrollStaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-8 max-w-4xl mx-auto" staggerDelay={0.2} variant="scale">
+          <ScrollStaggerContainer className="flex flex-wrap justify-center gap-12 mt-8 max-w-6xl mx-auto" staggerDelay={0.2} variant="scale">
             {teamMembers.map((member) => (
-              <div key={member.name} className="text-center">
+              <div key={member.name} className="text-center w-full md:w-[calc(50%-24px)] lg:w-[calc(33.333%-32px)]">
                 <ScrollRotateIn angle={-5}>
                   <div className="relative w-64 h-64 mx-auto mb-6 overflow-hidden bg-gray-900 border-2 border-red-500/20">
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                      className="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-500"
                     />
                   </div>
                 </ScrollRotateIn>
