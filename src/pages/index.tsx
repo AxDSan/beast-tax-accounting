@@ -5,6 +5,7 @@ import Hero from "../components/Hero"
 import GoHighLevelForm from "../components/GoHighLevelForm"
 import SEO from "../components/SEO"
 import { useI18n } from "../i18n"
+import { useConfig } from "../context/ConfigContext"
 import {
   ScrollFadeIn,
   ScrollStaggerContainer,
@@ -15,6 +16,7 @@ import {
 
 const IndexPage: React.FC<PageProps> = () => {
   const { t } = useI18n()
+  const { config } = useConfig()
 
 
   // Team members
@@ -211,7 +213,7 @@ const IndexPage: React.FC<PageProps> = () => {
                 <div className="relative z-10 rounded-sm overflow-hidden shadow-2xl border border-red-900/50">
                    <div className="aspect-[3/4] relative">
                      <img
-                        src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        src={config.aboutImage}
                         alt="Tax Strategy"
                         loading="lazy"
                         className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105 filter grayscale group-hover:grayscale-0"

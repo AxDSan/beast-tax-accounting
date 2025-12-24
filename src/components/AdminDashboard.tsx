@@ -191,6 +191,35 @@ export const AdminDashboard: React.FC = () => {
                           </div>
                         </div>
                       </div>
+                      <div>
+                        <label className="block text-xs font-semibold text-gray-500 mb-1">{t.admin?.aboutImage || "About Section Image"}</label>
+                        <div className="flex items-center gap-4">
+                          {formData.aboutImage && (
+                            <div className="w-20 h-20 rounded-xl overflow-hidden bg-gray-100 border border-gray-200 dark:border-white/10 flex-shrink-0">
+                              <img src={formData.aboutImage} alt="About Image Preview" className="w-full h-full object-cover" />
+                            </div>
+                          )}
+                          <div className="flex-grow">
+                            <label className="relative flex flex-col items-center justify-center w-full h-20 border-2 border-dashed border-gray-200 dark:border-white/10 rounded-xl hover:bg-gray-50 dark:hover:bg-white/5 transition-colors cursor-pointer">
+                              <div className="flex items-center gap-3 text-gray-400">
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                                </svg>
+                                <div className="flex flex-col items-center">
+                                  <span className="text-xs font-medium">{t.admin?.uploadImage || "Click to upload image"}</span>
+                                  <span className="text-[10px] opacity-60">(High Quality)</span>
+                                </div>
+                              </div>
+                              <input
+                                type="file"
+                                className="hidden"
+                                accept="image/*"
+                                onChange={(e) => handleImageUpload(e, 'aboutImage')}
+                              />
+                            </label>
+                          </div>
+                        </div>
+                      </div>
                     </div>
 
                     <h3 className="text-sm font-bold uppercase tracking-widest text-red-600 mt-8">{t.admin?.ceoInfo || "CEO Info"}</h3>
