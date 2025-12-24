@@ -32,14 +32,14 @@ export const DEFAULT_CONFIG: BrandConfig = {
   ceoName: 'Edwin Venezuela',
   ceoRole: 'CEO & Founder',
   ceoImage: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800',
-  phone: '787-823-7777',
-  email: 'info@summittaxadvisors.com',
-  whatsapp: '939-228-1422',
-  address: 'Carr 115 Km 16 Bo Rio Grande, Rincón, PR 00677',
-  youtube: 'https://www.youtube.com/embed/p-kasvTzniE',
-  seoTitle: 'Summit Tax Advisors | Licensed Tax Strategists',
-  seoDescription: 'Professional tax strategy services for business owners and real estate investors. We help you reduce your tax bill significantly.',
-  seoKeywords: 'tax accounting, tax planning, business tax services, tax consulting, puerto rico taxes, federal taxes',
+  phone: '000-000-0000',
+  email: 'info@yourbrand.com',
+  whatsapp: '000-000-0000',
+  address: 'Address to be updated',
+  youtube: '',
+  seoTitle: '',
+  seoDescription: '',
+  seoKeywords: '',
 };
 
 const ConfigContext = createContext<ConfigContextType | undefined>(undefined);

@@ -14,17 +14,17 @@ interface SEOProps {
 
 // Site metadata - modify these values to update SEO across the site
 const siteMetadata = {
-  title: "Summit Tax Accounting",
-  titleTemplate: "%s | Summit Tax Accounting",
+  title: "Tax Accounting",
+  titleTemplate: "%s | Tax Accounting",
   description: "Professional services for your business needs",
-  siteUrl: "https://summit-tax-accounting.com",
+  siteUrl: "https://beast-tax-accounting.com",
   image: "/og-image.jpg",
   twitterUsername: "",
-  author: "Summit Tax Accounting",
+  author: "Tax Accounting Service",
   lang: "en",
   locale: "en_US",
-  phone: "123-456-7890",
-  whatsapp: "123-456-7890",
+  phone: "000-000-0000",
+  whatsapp: "000-000-0000",
   email: "info@clientdomain.com",
   address: {
     street: "123 Main St",
@@ -62,13 +62,15 @@ const SEO: React.FC<SEOProps> = ({
 }) => {
   const { config } = useConfig()
 
+  const brandName = `${config.brandNameFirst} ${config.brandNameSecond}`.trim() || siteMetadata.title
+
   // Dynamic site metadata using config
   const dynamicSiteMetadata = {
     ...siteMetadata,
-    title: config.seoTitle || `${config.brandNameFirst} ${config.brandNameSecond}`,
-    titleTemplate: `%s | ${config.brandNameFirst} ${config.brandNameSecond}`,
+    title: config.seoTitle || brandName,
+    titleTemplate: `%s | ${brandName}`,
     description: config.seoDescription || siteMetadata.description,
-    author: config.companyName,
+    author: config.companyName || brandName,
     phone: config.phone,
     email: config.email,
     whatsapp: config.whatsapp,

@@ -10,24 +10,24 @@ dotenv.config();
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: "Summit Tax Advisors",
-    titleTemplate: "%s | Summit Tax Advisors",
-    description: "Supporting your personal and business finances, step by step. Strategic tax planning and optimization in Puerto Rico.",
-    siteUrl: "https://summittaxadvisors.com",
+    title: "Tax Accounting Service",
+    titleTemplate: "%s | Tax Accounting Service",
+    description: "Professional tax services.",
+    siteUrl: "https://beast-tax-accounting.com",
     image: "/og-image.png",
     twitterUsername: "",
-    author: "Summit Tax Advisors Inc",
+    author: "Tax Accounting Service",
     lang: "en",
     locale: "en_US",
-    phone: "787-823-7777",
-    whatsapp: "939-228-1422",
-    email: "info@summittaxadvisors.com",
+    phone: "000-000-0000",
+    whatsapp: "000-000-0000",
+    email: "info@yourbrand.com",
     address: {
-      street: "Carr 115 Km 16 Bo Rio Grande",
-      city: "Rincon",
-      state: "PR",
-      zip: "00677",
-      country: "Puerto Rico"
+      street: "Main St",
+      city: "City",
+      state: "ST",
+      zip: "00000",
+      country: "USA"
     },
     social: {
       facebook: "",
@@ -36,11 +36,7 @@ const config: GatsbyConfig = {
       youtube: ""
     },
     keywords: [
-      "Tax Accounting",
-      "Financial Planning",
-      "Puerto Rico Taxes",
-      "LLC Optimization",
-      "Corporate Returns"
+      "Tax Accounting"
     ]
   },
   graphqlTypegen: true,
