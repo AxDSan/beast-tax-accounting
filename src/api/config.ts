@@ -16,6 +16,7 @@ const DEFAULT_CONFIG = {
   email: 'info@summittaxadvisors.com',
   whatsapp: '939-228-1422',
   address: 'Carr 115 Km 16 Bo Rio Grande, Rincón, PR 00677',
+  youtube: 'https://www.youtube.com/embed/p-kasvTzniE',
 };
 
 // Lazy initialization of Supabase to handle environment variables correctly

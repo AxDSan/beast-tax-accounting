@@ -296,8 +296,8 @@ const IndexPage: React.FC<PageProps> = () => {
             <div className="aspect-video overflow-hidden border-2 border-red-900/20 shadow-2xl">
               <iframe
                 className="w-full h-full"
-                src="https://www.youtube.com/embed/p-kasvTzniE"
-                title="Summit Tax Accounting Video"
+                src={config.youtube}
+                title={`${brandName} Video`}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />

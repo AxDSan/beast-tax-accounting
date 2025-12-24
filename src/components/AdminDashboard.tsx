@@ -372,6 +372,16 @@ export const AdminDashboard: React.FC = () => {
                             className="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl px-4 py-3 text-sm outline-none focus:border-red-600 transition-colors resize-none"
                           />
                         </div>
+                        <div>
+                          <label className="block text-xs font-semibold text-gray-500 mb-1">{t.admin?.youtube || "YouTube URL (Embed)"}</label>
+                          <input
+                            name="youtube"
+                            value={formData.youtube}
+                            onChange={handleChange}
+                            placeholder="https://www.youtube.com/embed/..."
+                            className="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl px-4 py-3 text-sm outline-none focus:border-red-600 transition-colors"
+                          />
+                        </div>
                       </div>
                     </div>
 

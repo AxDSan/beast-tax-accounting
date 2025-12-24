@@ -12,6 +12,7 @@ interface BrandConfig {
   email: string;
   whatsapp: string;
   address: string;
+  youtube: string;
 }
 
 interface ConfigContextType {
@@ -32,6 +33,7 @@ export const DEFAULT_CONFIG: BrandConfig = {
   email: 'info@summittaxadvisors.com',
   whatsapp: '939-228-1422',
   address: 'Carr 115 Km 16 Bo Rio Grande, Rincón, PR 00677',
+  youtube: 'https://www.youtube.com/embed/p-kasvTzniE',
 };
 
 const ConfigContext = createContext<ConfigContextType | undefined>(undefined);
