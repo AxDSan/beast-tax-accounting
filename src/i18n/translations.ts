@@ -25,6 +25,7 @@ export const translations = {
     services: {
       title: "Nuestros Servicios",
       subtitle: "Soluciones fiscales completas para individuos y negocios",
+      appointmentText: "¿Necesita ayuda con algo más? ¡Programe una cita con nosotros!",
       specializedTitle: "Servicios Especializados",
       specializedSubtitle: "Estrategias avanzadas para maximizar sus beneficios",
       categories: {
@@ -220,6 +221,7 @@ export const translations = {
     services: {
       title: "Our Services",
       subtitle: "Complete tax solutions for individuals and businesses",
+      appointmentText: "Need help with something else? Schedule an appointment with us!",
       specializedTitle: "Specialized Services",
       specializedSubtitle: "Advanced strategies to maximize your benefits",
       categories: {
