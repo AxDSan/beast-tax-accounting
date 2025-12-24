@@ -55,8 +55,10 @@ export const ConfigProvider: React.FC<{ children: React.ReactNode }> = ({ childr
       .then(res => res.json())
       .then(data => {
         if (data && !data.error) {
-          setConfig(data);
-          localStorage.setItem('summit-brand-config', JSON.stringify(data));
+          // Merge with default config to ensure all fields exist
+          const mergedConfig = { ...DEFAULT_CONFIG, ...data };
+          setConfig(mergedConfig);
+          localStorage.setItem('summit-brand-config', JSON.stringify(mergedConfig));
         }
       })
       .catch(err => console.error('Failed to fetch config from API', err));

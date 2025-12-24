@@ -51,7 +51,9 @@ export default async function handler(
     // The public URL for viewing the file later
     // Supabase public URL format: https://[project-id].supabase.co/storage/v1/object/public/[bucket]/[key]
     // We add a timestamp as a cache buster to ensure the frontend sees the new image immediately
-    const publicUrl = `https://ohvspaqxiylcjfomwpmq.supabase.co/storage/v1/object/public/${BUCKET_NAME}/${key}?t=${Date.now()}`
+    const supabaseUrl = process.env.SUPABASE_URL || ""
+    const projectId = supabaseUrl.replace("https://", "").split(".")[0]
+    const publicUrl = `https://${projectId}.supabase.co/storage/v1/object/public/${BUCKET_NAME}/${key}?t=${Date.now()}`
 
     res.json({ uploadUrl: signedUrl, publicUrl })
   } catch (error: any) {
